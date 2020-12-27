@@ -1,0 +1,6 @@
+Package     Version Latest Type
+----------- ------- ------ -----
+distro-info 0.0.0   0.10   sdist
+pycairo     1.16.2  1.20.0 sdist
+pycups      1.9.73  2.0.1  sdist
+PyGObject   3.36.0  3.38.0 sdist
