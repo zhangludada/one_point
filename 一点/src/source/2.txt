@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Leise- - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=R2wBwmwSMG0Sqiw8GFSVjHT4Payg_JFAn51R8XcuvN0" />
+    <link id="MainCss" rel="stylesheet" href="/skins/bluecurve/bundle-bluecurve.min.css?v=jqoyyH9v7KSD9IqiHp9eWWYxAxhei91r8VtonVcnecY" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluecurve/bundle-bluecurve-mobile.min.css?v=iwyTBCq0yI4S4G_W1Q6v2XTVbfYZ47nSVT8NVCgIXiI" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/leise/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/leise/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/leise/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 552605;
+        var currentBlogApp = 'leise';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlueCurve';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=V0BbkkQE24zt1D_4TRGfRwcCB1E3YoBpH5YOp1qKoxA"></script>
+    
+    
+    
+</head>
+<body class="has-navbar has-bannerbar">
+    <a name="top"></a>
+            <a href="https://brands.cnblogs.com/aws/free?source=blog-bannerbar" onclick="ga('send', 'event', 'Link', 'click', 'aws-pc-bannerbar')">
+                <div class="bannerbar aws forpc">
+                    <img class="left" src="https://common.cnblogs.com/images/banner/bannerbar-aws-logo.png" alt="" />
+                    <img class="right" src="https://common.cnblogs.com/images/banner/bannerbar-aws-ssh.png?v=2" alt="" />
+                </div>
+            </a>
+            <div id="bannerbar" class="bannerbar-mobile formobile">
+                <a href="https://brands.cnblogs.com/aws/free?source=mobile-banner" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'aws-mobile-bannerbar')">
+                    <img src="https://img2020.cnblogs.com/blog/35695/202012/35695-20201211073419417-355442931.jpg" alt="" />
+                </a>
+            </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=oS4PkibyMjZ9rGD5XAcLt99uW_s76Javy2up4dbnZNY" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" onclick="logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="container">
+	<!-- Header -->
+  <div id="banner">
+    <h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/leise/">LEISE</a>
+</h1><br><br>
+    <h1></h1>
+  </div>
+
+
+	
+ <div id="nav-main" align="center">   
+    <ul>
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/leise/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Leise-">
+联系</a></li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/leise/rss/">
+订阅</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+    </ul>
+   </div>
+
+
+
+    <div id="main">
+        <!-- Left Sidebar -->
+        <div id="leftsidebar">
+            <div id="nav-supp">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="blog-sidecolumn"></div>
+                <script>loadBlogSideColumn();</script>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div id="content"><a id="contentstart" name="contentstart"></a>
+
+
+
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2019/10/26.html">2019年10月26日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/11745621.html">
+    <span>
+            <span>[置顶]</span>
+        解决面具magisk刷入模块卡开机问题
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：手机刷入面具模块出现卡开机第二屏，在reccovery模式下，点击高级（advanced）-&gt;文件管理（File Manager）-&gt;data-&gt;adb-&gt;modules删掉对应模块的文件夹就可以了        <a href="https://www.cnblogs.com/leise/p/11745621.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2019-10-26 21:21
+Leise-
+<span data-post-id="11745621" class="post-view-count">阅读(11000)</span> 
+<span data-post-id="11745621" class="post-comment-count">评论(0)</span> 
+<span data-post-id="11745621" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11745621" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2020/12/26.html">2020年12月26日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/14194779.html">
+    <span>
+        简单理解vue中的nextTick
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：背景 vue是异步渲染的，当data改变之后，DOM不会立刻被渲染，页面渲染时会将data的修改做整合，多次data修改只会做整合最后一次性渲染出来，这也是异步渲染的原因。只有异步渲染才可以实现整合操作。 例子 methods: { update() { for (let i = 0; i &amp;lt; 10        <a href="https://www.cnblogs.com/leise/p/14194779.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2020-12-26 22:38
+Leise-
+<span data-post-id="14194779" class="post-view-count">阅读(48)</span> 
+<span data-post-id="14194779" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14194779" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14194779" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2020/12/25.html">2020年12月25日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/14187795.html">
+    <span>
+        解决Vue-router 报NavigationDuplicated的三种方法
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：控制台会报[NavigationDuplicated {_name: &amp;quot;NavigationDuplicated&amp;quot;, name: &amp;quot;NavigationDuplicated&amp;quot;}]。其原因在于Vue-router在3.1之后把$router.push()方法改为了Promise。所以假如没有回调函数，        <a href="https://www.cnblogs.com/leise/p/14187795.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2020-12-25 10:47
+Leise-
+<span data-post-id="14187795" class="post-view-count">阅读(9)</span> 
+<span data-post-id="14187795" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14187795" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14187795" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2020/12/24.html">2020年12月24日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/14185852.html">
+    <span>
+        解决[BScroll warn]: Can not resolve the wrapper DOM. Vue better-scroll
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：在开发项目过程中，使用better-scroll插件中遇到了滚动一次重复提示相同错误 [BScroll warn]: Can not resolve the wrapper DOM. Vue better-scroll [Vue warn]: Error in mounted hook: “Type        <a href="https://www.cnblogs.com/leise/p/14185852.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2020-12-24 19:22
+Leise-
+<span data-post-id="14185852" class="post-view-count">阅读(11)</span> 
+<span data-post-id="14185852" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14185852" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14185852" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2020/09/09.html">2020年9月9日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/13630124.html">
+    <span>
+        常见的JS手写函数汇总（代码注释、持续更新）
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：最近在复习面试中常见的JS手写函数，顺便进行代码注释和总结，方便自己回顾也加深记，内容也会陆陆续续进行补充和改善。 一、手写深拷贝 &lt;script&gt; const obj1 = { name: &#39;Leise&#39;, age: 23, address: { country: &#39;China&#39;, city: &#39;        <a href="https://www.cnblogs.com/leise/p/13630124.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2020-09-09 00:58
+Leise-
+<span data-post-id="13630124" class="post-view-count">阅读(157)</span> 
+<span data-post-id="13630124" class="post-comment-count">评论(0)</span> 
+<span data-post-id="13630124" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=13630124" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2019/11/24.html">2019年11月24日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/11923107.html">
+    <span>
+        CSS中margin：auto什么意思？margin：auto属性的用法详解
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：我们都知道使用margin:auto可以让元素水平居中的。但你有没有想过使用margin:auto可以让元素水平居中的原因，要回答这个问题，我们首先需要看一下margin：auto的工作原理。auto如果它适用于垂直居中，那么又是一种什么情况，下面我们来看具体内容。 首先auto是做什么的？ 定义a        <a href="https://www.cnblogs.com/leise/p/11923107.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2019-11-24 16:57
+Leise-
+<span data-post-id="11923107" class="post-view-count">阅读(3879)</span> 
+<span data-post-id="11923107" class="post-comment-count">评论(0)</span> 
+<span data-post-id="11923107" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11923107" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2019/10/26.html">2019年10月26日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/11745621.html">
+    <span>
+        解决面具magisk刷入模块卡开机问题
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：手机刷入面具模块出现卡开机第二屏，在reccovery模式下，点击高级（advanced）-&gt;文件管理（File Manager）-&gt;data-&gt;adb-&gt;modules删掉对应模块的文件夹就可以了        <a href="https://www.cnblogs.com/leise/p/11745621.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2019-10-26 21:21
+Leise-
+<span data-post-id="11745621" class="post-view-count">阅读(11000)</span> 
+<span data-post-id="11745621" class="post-comment-count">评论(0)</span> 
+<span data-post-id="11745621" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11745621" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2019/10/23.html">2019年10月23日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/11717377.html">
+    <span>
+        微信小程序--每周图书推荐
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：这是我个人的第一个原生微信小程序，作为一枚萌新，自己没有前端经历，所以代码很混乱，界面很简单，难度也很低，主要用来记录自己学小程序过程中遇到的问题。 一、 先上预览图 左右滑动切换每周推荐的图书，点击封面进入图书详情页面，点击tabBar上的关于可进入关于页 二、详细说明 创建项目 wxml和wxs        <a href="https://www.cnblogs.com/leise/p/11717377.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2019-10-23 18:49
+Leise-
+<span data-post-id="11717377" class="post-view-count">阅读(989)</span> 
+<span data-post-id="11717377" class="post-comment-count">评论(0)</span> 
+<span data-post-id="11717377" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11717377" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+		
+<h1>
+	<a href="https://www.cnblogs.com/leise/archive/2019/10/15.html">2019年10月15日</a>
+</h1>
+
+
+		<div class="post">
+			<div class="posthead">
+				<h2>
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/leise/p/11679901.html">
+    <span>
+        微信小程序--相对路径和绝对路径
+    </span>
+    
+
+
+</a>
+</h2>
+			</div>
+			<div class="postbody">
+
+    <div class="c_b_p_desc">
+摘要：相对路径： ../表示返回访问上一级目录 如：../../components/like/index 绝对路径： 以&quot;/&quot;开头 表示从根目录开始寻找文件 如：/components/like/index        <a href="https://www.cnblogs.com/leise/p/11679901.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<p class="postfoot">		
+				posted @ 2019-10-15 19:49
+Leise-
+<span data-post-id="11679901" class="post-view-count">阅读(862)</span> 
+<span data-post-id="11679901" class="post-comment-count">评论(0)</span> 
+<span data-post-id="11679901" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11679901" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+<hr />
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script></div>
+    </div>
+	<!-- Footer -->
+	<div id="info-site">
+	<p id="info-company">随笔 - 8,
+文章 - 0,
+评论 - 0
+
+</p>
+	<p id="info-standards">Copyright &copy 2020 Leise-
+<br /><span id="poweredby">Powered by .NET 5.0.1-servicing.20575.16 on Kubernetes</span>
+</p>
+</div>
+
+</div>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta name="description" content="1ã€�å‰�è¨€ éš�ç�€Android 11çš„æ­£å¼�å�‘å¸ƒï¼Œé€‚é…�Android 10/11 åˆ†åŒºå­˜å‚¨å°±æ›´åŠ çš„è¿«åˆ‡äº†ï¼Œå› ä¸ºAndroid 11å¼€å§‹ï¼Œå°†å¼ºåˆ¶å¼€å�¯åˆ†åŒºå­˜å‚¨ï¼Œæˆ‘ä»¬å°±æ— æ³•å†�ä»¥ç»�å¯¹è·¯å¾„çš„æ–¹å¼�å�»è¯»å†™é��æ²™ç›’ç›®å½•ä¸‹çš„" />
+    <meta property="og:description" content="1ã€�å‰�è¨€ éš�ç�€Android 11çš„æ­£å¼�å�‘å¸ƒï¼Œé€‚é…�Android 10/11 åˆ†åŒºå­˜å‚¨å°±æ›´åŠ çš„è¿«åˆ‡äº†ï¼Œå› ä¸ºAndroid 11å¼€å§‹ï¼Œå°†å¼ºåˆ¶å¼€å�¯åˆ†åŒºå­˜å‚¨ï¼Œæˆ‘ä»¬å°±æ— æ³•å†�ä»¥ç»�å¯¹è·¯å¾„çš„æ–¹å¼�å�»è¯»å†™é��æ²™ç›’ç›®å½•ä¸‹çš„" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>RxHttp å®Œç¾�é€‚é…�Android 10/11 ä¸Šä¼ /ä¸‹è½½/è¿›åº¦ç›‘å�¬ - åˆ˜æ•¬å…´ - å�šå®¢å›­</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=R2wBwmwSMG0Sqiw8GFSVjHT4Payg_JFAn51R8XcuvN0" />
+    <link id="MainCss" rel="stylesheet" href="/skins/banlieue13/bundle-banlieue13.min.css?v=nSJWRKbAtNEwAUjJ1kf7YVma2JYO-y1vz2ddpihk6Ds" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/banlieue13/bundle-banlieue13-mobile.min.css?v=a93K-sa6V7mUbq62i0gwEHKbdAzwI-GJ8l5wYdsgl5c" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/liujingxing/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/liujingxing/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/liujingxing/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 294650;
+        var currentBlogApp = 'liujingxing';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Banlieue13';
+        var visitorUserId = '';
+    </script>
+        <script>
+            var currentPostDateAdded = '2020-12-26 10:33';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=V0BbkkQE24zt1D_4TRGfRwcCB1E3YoBpH5YOp1qKoxA"></script>
+    
+    
+    
+</head>
+<body class="has-navbar has-bannerbar">
+    <a name="top"></a>
+            <a href="https://brands.cnblogs.com/aws/free?source=blog-bannerbar" onclick="ga('send', 'event', 'Link', 'click', 'aws-pc-bannerbar')">
+                <div class="bannerbar aws forpc">
+                    <img class="left" src="https://common.cnblogs.com/images/banner/bannerbar-aws-logo.png" alt="" />
+                    <img class="right" src="https://common.cnblogs.com/images/banner/bannerbar-aws-ssh.png?v=2" alt="" />
+                </div>
+            </a>
+            <div id="bannerbar" class="bannerbar-mobile formobile">
+                <a href="https://brands.cnblogs.com/aws/free?source=mobile-banner" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'aws-mobile-bannerbar')">
+                    <img src="https://img2020.cnblogs.com/blog/35695/202012/35695-20201211073419417-355442931.jpg" alt="" />
+                </a>
+            </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="å¼€å�‘è€…çš„ç½‘ä¸Šå®¶å›­"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="å�šå®¢å›­Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">é¦–é¡µ</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">æ–°é—»</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">å�šé—®</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">ä¸“åŒº</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">é—ªå­˜</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">ç�­çº§</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="ä»£ç �æ”¹å�˜ä¸–ç•Œ" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="æ�œç´¢" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="æˆ‘çš„å�šå®¢" title="æˆ‘çš„å�šå®¢">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="æˆ‘çš„å�šå®¢" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="çŸ­æ¶ˆæ�¯" title="çŸ­æ¶ˆæ�¯">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=oS4PkibyMjZ9rGD5XAcLt99uW_s76Javy2up4dbnZNY" alt="çŸ­æ¶ˆæ�¯" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="ç”¨æˆ·å¤´åƒ�" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">æˆ‘çš„å�šå®¢</a>
+                            <a href="https://home.cnblogs.com/">æˆ‘çš„å›­å­�</a>
+                            <a href="https://account.cnblogs.com/settings/account">è´¦å�·è®¾ç½®</a>
+                            <a href="javascript:void(0)" onclick="logout();">é€€å‡ºç™»å½•</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">æ³¨å†Œ</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="login()">ç™»å½•</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/liujingxing/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="è¿”å›�ä¸»é¡µ" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/liujingxing/">åˆ˜æ•¬å…´</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle å�šå®¢çš„æ ‡é¢˜å’Œå‰¯æ ‡é¢˜ -->
+</div><!--end: header å¤´éƒ¨ -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+å�šå®¢å›­</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/liujingxing/">
+é¦–é¡µ</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+æ–°éš�ç¬”</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%88%98%E6%95%AC%E5%85%B4">
+è�”ç³»</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+ç®¡ç�†</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/liujingxing/rss/">
+è®¢é˜…</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/liujingxing/rss/">
+    <img src="/skins/banlieue13/images/xml.gif" alt="è®¢é˜…" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+éš�ç¬”- 3&nbsp;
+æ–‡ç« - 1&nbsp;
+è¯„è®º- 8&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator å�šå®¢å¯¼èˆªæ � -->
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/liujingxing/p/14194757.html">
+    <span>RxHttp å®Œç¾�é€‚é…�Android 10/11 ä¸Šä¼ /ä¸‹è½½/è¿›åº¦ç›‘å�¬</span>
+    
+
+
+</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="1ã€�å‰�è¨€">1ã€�å‰�è¨€</h1>
+<p>éš�ç�€Android 11çš„æ­£å¼�å�‘å¸ƒï¼Œé€‚é…�Android 10/11 åˆ†åŒºå­˜å‚¨å°±æ›´åŠ çš„è¿«åˆ‡äº†ï¼Œå› ä¸ºAndroid 11å¼€å§‹ï¼Œå°†å¼ºåˆ¶å¼€å�¯åˆ†åŒºå­˜å‚¨ï¼Œæˆ‘ä»¬å°±æ— æ³•å†�ä»¥ç»�å¯¹è·¯å¾„çš„æ–¹å¼�å�»è¯»å†™é��æ²™ç›’ç›®å½•ä¸‹çš„æ–‡ä»¶ï¼Œä¸ºæ­¤ï¼Œ<a href="https://github.com/liujingxing/okhttp-RxHttp" target="_blank">RxHttp </a>åœ¨<code>2.4.0</code>ç‰ˆæœ¬ä¸­å°±æ­£å¼�é€‚é…�äº†åˆ†åŒºå­˜å‚¨ï¼Œå¹¶ä¸”ï¼Œå�¯ä»¥é��å¸¸ä¼˜é›…çš„å®�ç�°æ–‡ä»¶ä¸Šä¼ /ä¸‹è½½/è¿›åº¦ç›‘å�¬ï¼Œä¸‰æ­¥å�³å�¯æ��æ‡‚ä»»æ„�è¯·æ±‚ã€‚</p>
+<p>è€�è§„çŸ©ï¼Œå…ˆçœ‹çœ‹è¯·æ±‚ä¸‰éƒ¨æ›²<br>
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd222bde222e4f7d88e3f69e6eabd0be~tplv-k3u1fbpfcp-watermark.image" alt="" loading="lazy"><br>
+å¦‚æ�œä½ æƒ³äº†è§£RxHttpæ›´è¿‡åŠŸèƒ½ï¼Œè¯·æŸ¥çœ‹ä»¥ä¸‹ç³»åˆ—æ–‡ç« </p>
+<p><a href="https://juejin.im/post/6856550856796897287" target="_blank">RxHttp 2000+starï¼Œå��ç¨‹è¯·æ±‚ï¼Œä»…éœ€ä¸‰æ­¥</a></p>
+<p><a href="https://juejin.im/post/6844904016380428302" target="_blank">RxHttp è®©ä½ çœ¼å‰�ä¸€äº®çš„Httpè¯·æ±‚æ¡†æ�¶</a></p>
+<p><em><strong>gradleä¾�èµ–</strong></em></p>
+<h2 id="å¿…é¡»">å¿…é¡»</h2>
+<pre><code class="language-java">//ä½¿ç”¨kaptä¾�èµ–rxhttp-compileræ—¶å¿…é¡»
+apply plugin: 'kotlin-kapt'
+
+android {
+    //å¿…é¡»ï¼Œjava 8æˆ–æ›´é«˜
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.ljx.rxhttp:rxhttp:2.5.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0' //rxhttp v2.2.2ç‰ˆæœ¬èµ·ï¼Œéœ€è¦�æ‰‹åŠ¨ä¾�èµ–okhttp
+    kapt 'com.ljx.rxhttp:rxhttp-compiler:2.5.2' //ç”Ÿæˆ�RxHttpç±»ï¼Œçº¯Javaé¡¹ç›®ï¼Œè¯·ä½¿ç”¨annotationProcessorä»£æ›¿kapt
+ }
+</code></pre>
+<h2 id="å�¯é€‰">å�¯é€‰</h2>
+<pre><code class="language-java">android {
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                    //ä½¿ç”¨asXxxæ–¹æ³•æ—¶å¿…é¡»ï¼Œå‘ŠçŸ¥RxHttpä½ ä¾�èµ–çš„rxjavaç‰ˆæœ¬ï¼Œå�¯ä¼ å…¥rxjava2ã€�rxjava3
+                    rxhttp_rxjava: 'rxjava3'ï¼Œ 
+                    rxhttp_package: 'rxhttp'   //é��å¿…é¡»ï¼ŒæŒ‡å®šRxHttpç±»åŒ…å��
+                ]
+            }
+        }
+    }
+}
+dependencies {
+    implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.1' //ç®¡ç�†å��ç¨‹ç”Ÿå‘½å‘¨æœŸï¼Œé¡µé�¢é”€æ¯�ï¼Œå…³é—­è¯·æ±‚
+    
+    //rxjava2   (RxJava2/Rxjava3äºŒé€‰ä¸€ï¼Œä½¿ç”¨asXxxæ–¹æ³•æ—¶å¿…é¡»)
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.ljx.rxlife2:rxlife-rxjava:2.0.0' //ç®¡ç�†RxJava2ç”Ÿå‘½å‘¨æœŸï¼Œé¡µé�¢é”€æ¯�ï¼Œå…³é—­è¯·æ±‚
+
+    //rxjava3
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'com.ljx.rxlife3:rxlife-rxjava:3.0.0' //ç®¡ç�†RxJava3ç”Ÿå‘½å‘¨æœŸï¼Œé¡µé�¢é”€æ¯�ï¼Œå…³é—­è¯·æ±‚
+
+    //é��å¿…é¡»ï¼Œæ ¹æ�®è‡ªå·±éœ€æ±‚é€‰æ‹© RxHttpé»˜è®¤å†…ç½®äº†GsonConverter
+    implementation 'com.ljx.rxhttp:converter-fastjson:2.5.2'
+    implementation 'com.ljx.rxhttp:converter-jackson:2.5.2'
+    implementation 'com.ljx.rxhttp:converter-moshi:2.5.2'
+    implementation 'com.ljx.rxhttp:converter-protobuf:2.5.2'
+    implementation 'com.ljx.rxhttp:converter-simplexml:2.5.2'
+}
+</code></pre>
+<h1 id="2ã€�android-1011-åˆ†åŒºå­˜å‚¨">2ã€�Android 10/11 åˆ†åŒºå­˜å‚¨</h1>
+<p>å½“æˆ‘ä»¬Appçš„<code>targetSdkVersion</code>æ›´æ”¹ä¸º28ä»¥ä¸Šï¼Œå¹¶ä¸”è¿�è¡Œåœ¨Android 10ä»¥ä¸Šè®¾å¤‡æ—¶ï¼Œæˆ‘ä»¬æ— æ³•å†�ä»¥ç»�å¯¹è·¯å¾„çš„æ–¹å¼�ï¼Œå�»è¯»å†™é��æ²™ç›’ç›®å½•ä¸‹çš„æ–‡ä»¶ï¼Œå½“ç„¶ï¼Œå¦‚æ�œAppæ˜¯è¦†ç›–å®‰è£…ï¼ˆå¦‚ï¼štargetSdkVersion 28 è¦†ç›–å®‰è£…ä¸º 29ï¼‰ï¼Œåˆ™ä¼šä¿�æŒ�å�Ÿæ�¥çš„è®¿é—®æ–¹å¼�ã€‚</p>
+<p><em><strong>requestLegacyExternalStorageå±�æ€§</strong></em></p>
+<p>å¦‚æ�œæˆ‘ä»¬çš„appå°†targetSdkVersionæ›´æ”¹ä¸º28ä»¥ä¸Šï¼Œä¸”æƒ³ä¿�æŒ�å�Ÿæ�¥çš„è®¿é—®æ–¹å¼�ï¼Œåˆ™éœ€è¦�åœ¨æ¸…å�•æ–‡ä»¶ä¸­å°† <code>requestLegacyExternalStorage</code> çš„å€¼è®¾ç½®ä¸º <code>true</code>ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-xml">&lt;manifest ...&gt;
+&lt;!-- This attribute is "false" by default on apps targeting
+     Android 10 or higher. --&gt;
+   &lt;application android:requestLegacyExternalStorage="true" ... &gt;
+   ...
+   &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+<p>æ­¤æ—¶ï¼Œä¾¿å�¯ç»§ç»­ä»¥å�Ÿæ�¥çš„æ–¹å¼�å�»è¯»å†™æ–‡ä»¶ï¼Œç„¶è€Œï¼Œåœ¨Android 11ä¸Šï¼ŒGoogleå�ˆç»™äº†å®ƒæ–°çš„å�«ä¹‰ï¼Œæ�¥çœ‹çœ‹<a href="https://developer.android.google.cn/training/data-storage/use-cases#opt-out-scoped-storage" target="_blank">å®˜ç½‘çš„å�Ÿè¯�</a></p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eea88335b9424484a4e85fa8bf1cb4dc~tplv-k3u1fbpfcp-watermark.image" alt="" loading="lazy"></p>
+<p>ä¹Ÿå°±æ˜¯è¯´ï¼Œåœ¨Android 11è®¾å¤‡ä¸Šï¼Œ<code>targetSdkVersion</code>ä¸º29ä»¥ä¸Šçš„appï¼Œå°†å¼ºåˆ¶å¼€å�¯åˆ†åŒºå­˜å‚¨ï¼Œ<code>requestLegacyExternalStorage</code>å±�æ€§å¤±æ•ˆ</p>
+<p><em><strong>æ³¨æ„�ï¼Œå�ªè¦�å�Œæ—¶æ»¡è¶³ä»¥ä¸Šä¸¤ä¸ªæ�¡ä»¶ï¼Œä¸�ç®¡æ˜¯è¦†ç›–å®‰è£…è¿˜æ˜¯<code>requestLegacyExternalStorage = true</code>ï¼Œéƒ½ä¼šå¼ºåˆ¶å¼€å�¯åˆ†åŒºå­˜å‚¨</strong></em></p>
+<p><em><strong>åˆ†åŒºå­˜å‚¨ä¼˜åŠ¿</strong></em></p>
+<ul>
+<li>
+<p>å¯¹ç”¨æˆ·æ�¥è¯´ï¼Œè§£å†³äº†æ–‡ä»¶ä¹±æ”¾çš„ç�°è±¡</p>
+</li>
+<li>
+<p>å¯¹äº�å¼€å�‘è€…æ�¥è¯´ï¼Œæˆ‘ä»¬æ— éœ€å†™æ�ƒé™�ï¼Œå°±å�¯ä»¥åœ¨åˆ†åŒºç›®å½•ä¸‹åˆ›å»ºæ–‡ä»¶ï¼Œå¹¶ä¸”è®¿é—®è‡ªå·±åˆ›å»ºçš„æ–‡ä»¶ï¼Œä¸�éœ€è¦�è¯»æ�ƒé™�ï¼ˆè®¿é—®å…¶å®ƒåº”ç”¨åˆ›å»ºçš„æ–‡ä»¶ï¼Œè¿˜æ˜¯éœ€è¦�è¯»æ�ƒé™�ï¼‰</p>
+</li>
+</ul>
+<p><em><strong>æ–°çš„æ–‡ä»¶è®¿é—®æ–¹å¼�</strong></em></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f54452cb69f9425eb2b77dea7041efa6~tplv-k3u1fbpfcp-watermark.image" alt="" loading="lazy"></p>
+<p>æ­¤å›¾æ�¥æº�äº�ä½œè€…[è¿�ç»­ä¸‰å±Šæ�‘è�‰]åˆ†äº«çš„<a href="https://juejin.im/post/6862633674089693197#heading-2" target="_blank">Android 10(Q)/11(R) åˆ†åŒºå­˜å‚¨é€‚é…�</a>ä¸€æ–‡ï¼Œæ„Ÿè°¢ä½œè€…çš„æ€»ç»“</p>
+<h1 id="3ã€�ä¸Šä¼ ">3ã€�ä¸Šä¼ </h1>
+<h2 id="31ã€�ç®€å�•ä¸Šä¼ ">3.1ã€�ç®€å�•ä¸Šä¼ </h2>
+<p>åœ¨ä»‹ç»�Android 10æ–‡ä»¶ä¸Šä¼ å‰�ï¼Œæˆ‘ä»¬å…ˆæ�¥çœ‹çœ‹Android 10ä¹‹å‰�æ˜¯å¦‚ä½•ä¸Šä¼ æ–‡ä»¶çš„ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">//kotlin å��ç¨‹
+val result = RxHttp.postForm("/service/...")             
+    .add("key", "value")
+    .addFile("file", File("xxx/1.jpg"))                                   
+    .awaitString()   //awaitXxxç³»åˆ—æ–¹æ³•æ˜¯æŒ‚æ–­æ–¹æ³•  
+    
+//RxJava
+RxHttp.postForm("/service/...")      
+    .add("key", "value")
+    .addFile("file", File("xxx/1.jpg")) 
+    .asString()                             
+    .subscribe({                       
+        //æˆ�åŠŸå›�è°ƒ                              
+    }, {                       
+        //å¼‚å¸¸å›�è°ƒ                              
+    })                             
+</code></pre>
+<p>ä»¥ä¸Šï¼Œæˆ‘ä»¬ä»…éœ€è°ƒç”¨ <code>addFile</code>æ–¹æ³•æ·»åŠ æ–‡ä»¶å¯¹è±¡å�³å�¯ï¼ŒRxHttpæ��ä¾›äº†ä¸€ç³»åˆ—<code>addFile</code>æ–¹æ³•ï¼Œåˆ—å‡ºå‡ ä¸ªå¸¸ç”¨çš„ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">//æ·»åŠ å�•ä¸ªæ–‡ä»¶
+addFile(String, File) 
+//æ·»åŠ å¤šä¸ªæ–‡ä»¶ï¼Œæ¯�ä¸ªæ–‡ä»¶å¯¹åº”ç›¸å�Œçš„key
+addFile(String, List&lt;? extends File&gt; fileList) 
+//æ·»åŠ å¤šä¸ªæ–‡ä»¶ï¼Œæ¯�ä¸ªæ–‡ä»¶å¯¹åº”ä¸�å�Œçš„key
+addFile(Map&lt;String, ? extends File&gt; fileMap) 
+//ç­‰ç­‰å…¶å®ƒaddFileæ–¹æ³•
+</code></pre>
+<p>åœ¨Android 10ï¼Œæˆ‘ä»¬éœ€è¦�é€šè¿‡Uriå¯¹è±¡å�»ä¸Šä¼ æ–‡ä»¶ï¼Œåœ¨RxHttpä¸­ï¼Œé€šè¿‡<code>addPart</code>æ–¹æ³•æ·»åŠ <code>Uri</code>å¯¹è±¡ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">
+val context = getContext();  //è�·å�–ä¸Šä¸‹æ–‡å¯¹è±¡   
+//è�·å�–Uriå¯¹è±¡ï¼Œè¿™é‡Œä¸ºäº†æ–¹ä¾¿ï¼Œéš�ä¾¿å†™äº†ä¸€ä¸ªDownlaodç›®å½•ä¸‹çš„Uriåœ°å�€
+val uri = Uri.parse("content://media/external/downloads/13417")
+
+//kotlin å��ç¨‹
+val result = RxHttp.postForm("/service/...")             
+    .add("key", "value")
+    .addPart(context, "file", uri)                                   
+    .awaitString()   //awaitXxxç³»åˆ—æ–¹æ³•æ˜¯æŒ‚æ–­æ–¹æ³•    
+    
+//RxJava
+RxHttp.postForm("/service/...")        
+    .add("key", "value")
+    .addPart(context, "file", uri)                              
+    .asString()                                                 
+    .subscribe({                                           
+        //æˆ�åŠŸå›�è°ƒ                                                  
+    }, {                                           
+        //å¼‚å¸¸å›�è°ƒ                                                  
+    })
+</code></pre>
+<p>å�Œæ ·çš„ï¼ŒRxHttpå†…éƒ¨æ��ä¾›äº†ä¸€ç³»åˆ—<code>addPart</code>æ–¹æ³•ä¾›å¤§å®¶é€‰æ‹©ï¼Œåˆ—å‡ºå‡ ä¸ªå¸¸ç”¨çš„ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">//æ·»åŠ å�•ä¸ªUriå¯¹è±¡
+addPart(Context, String, Uri) 
+//æ·»åŠ å¤šä¸ªUriå¯¹è±¡ï¼Œæ¯�ä¸ªUriå¯¹åº”ç›¸å�Œçš„key
+addParts(Contextï¼ŒString, List&lt;? extends Uri&gt; uris) 
+//æ·»åŠ å¤šä¸ªUriå¯¹è±¡ï¼Œæ¯�ä¸ªUriå¯¹åº”ä¸�å�Œçš„key
+addParts(Context context, Map&lt;String, ? extends Uri&gt; uriMap) 
+//ç­‰ç­‰å…¶å®ƒaddPartæ–¹æ³•
+</code></pre>
+<h2 id="32ã€�å¸¦è¿›åº¦ä¸Šä¼ ">3.2ã€�å¸¦è¿›åº¦ä¸Šä¼ </h2>
+<p>è€�è§„çŸ©ï¼Œçœ‹çœ‹Android 10ä¹‹å‰�æ˜¯å¦‚ä½•ç›‘å�¬ä¸Šä¼ è¿›åº¦çš„ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-kotlin">//kotlin å��ç¨‹
+val result = RxHttp.postForm("/service/...")             
+    .add("key", "value")
+    .addFile("file", File("xxx/1.jpg")) 
+    .upload(this) {//thisä¸ºå½“å‰�å��ç¨‹CoroutineScopeå¯¹è±¡ï¼Œç”¨äº�æ�§åˆ¶å›�è°ƒçº¿ç¨‹      
+        //ä¸Šä¼ è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�    
+    }
+    .awaitString()   //awaitXxxç³»åˆ—æ–¹æ³•æ˜¯æŒ‚æ–­æ–¹æ³•  
+    
+//RxJava
+RxHttp.postForm("/service/...")      
+    .add("key", "value")
+    .addFile("file", File("xxx/1.jpg"))
+    .upload(AndroidSchedulers.mainThread()) {            
+        //ä¸Šä¼ è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�   
+    }                                                               
+    .asString()                             
+    .subscribe({                       
+        //æˆ�åŠŸå›�è°ƒ                              
+    }, {                       
+        //å¼‚å¸¸å›�è°ƒ                              
+    })                   
+</code></pre>
+<p>ç›¸æ¯”äº�å�•çº¯çš„ä¸Šä¼ æ–‡ä»¶ï¼Œæˆ‘ä»¬ä»…éœ€é¢�å¤–è°ƒç”¨<code>upload</code>æ“�ä½œç¬¦ï¼Œä¼ å…¥çº¿ç¨‹è°ƒåº¦å™¨å�Šè¿›åº¦å›�è°ƒå�³å�¯ã€‚</p>
+<p>å�Œæ ·çš„ï¼Œå¯¹äº�Andorid 10ï¼Œæˆ‘ä»¬ä»…éœ€è¦�å°†Fileå¯¹è±¡æ�¢æˆ�Uriå¯¹è±¡å�³å�¯ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">val context = getContext();  //è�·å�–ä¸Šä¸‹æ–‡å¯¹è±¡   
+//è�·å�–Uriå¯¹è±¡ï¼Œè¿™é‡Œä¸ºäº†æ–¹ä¾¿ï¼Œéš�ä¾¿å†™äº†ä¸€ä¸ªDownlaodç›®å½•ä¸‹çš„Uriåœ°å�€
+val uri = Uri.parse("content://media/external/downloads/13417")
+
+//kotlin å��ç¨‹
+val result = RxHttp.postForm("/service/...")             
+    .add("key", "value")
+    .addPart(context, "file", uri)     
+    .upload(this) {//thisä¸ºå½“å‰�å��ç¨‹CoroutineScopeå¯¹è±¡ï¼Œç”¨äº�æ�§åˆ¶å›�è°ƒçº¿ç¨‹      
+        //ä¸Šä¼ è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�   
+    }
+    .awaitString()   //awaitXxxç³»åˆ—æ–¹æ³•æ˜¯æŒ‚æ–­æ–¹æ³•     
+    
+//RxJava
+RxHttp.postForm("/service/...")      
+    .add("key", "value")
+    .addPart(context, "file", uri)     
+    .upload(AndroidSchedulers.mainThread()) {            
+        //ä¸Šä¼ è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�     
+    }                                                          
+    .asString()                             
+    .subscribe({                       
+        //æˆ�åŠŸå›�è°ƒ                              
+    }, {                       
+        //å¼‚å¸¸å›�è°ƒ                              
+    })                
+</code></pre>
+<p>æ€�ä¹ˆæ ·ï¼Ÿæ˜¯ä¸�æ˜¯so easy!!</p>
+<h1 id="4ã€�ä¸‹è½½">4ã€�ä¸‹è½½</h1>
+<p>ä¸‹è½½è¾ƒäº�ä¸Šä¼ ï¼Œè¦�ä¸°å¯Œå¾ˆå¤šï¼Œ<code>RxHttp</code>å†…éƒ¨æ��ä¾›ç±»ä¸€ç³»åˆ—ä¸‹è½½æ–¹æ³•æ�¥æ»¡è¶³ä¸�å�Œçš„éœ€æ±‚ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-kotlin">//kotlin
+fun IRxHttp.toDownload(
+    destPath: String,
+    context: CoroutineContext? = null,
+    progress: (suspend (ProgressT&lt;String&gt;) -&gt; Unit)? = null
+)
+fun IRxHttp.toDownload(
+    context: Context,
+    uri: Uri,
+    coroutineContext: CoroutineContext? = null,
+    progress: (suspend (ProgressT&lt;Uri&gt;) -&gt; Unit)? = null
+)
+fun &lt;T&gt; IRxHttp.toDownload(
+    osFactory: OutputStreamFactory&lt;T&gt;,
+    context: CoroutineContext? = null,
+    progress: (suspend (ProgressT&lt;T&gt;) -&gt; Unit)? = null
+)
+</code></pre>
+<h2 id="41ã€�ç®€å�•ä¸‹è½½">4.1ã€�ç®€å�•ä¸‹è½½</h2>
+<p>åœ¨Android 10ä¹‹å‰�ï¼Œæˆ‘ä»¬ä»…éœ€ä¼ å…¥ä¸€ä¸ªæœ¬åœ°æ–‡ä»¶è·¯å¾„å�³å�¯ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-kotlin">val localPath = "/sdcard/.../xxx.apk"
+//kotlin å��ç¨‹
+val result = RxHttp.get("/service/.../xxx.apk")       
+    .toDownload(localPath)
+    .await()  //è¿™é‡Œè¿”å›�sdå�¡å­˜å‚¨è·¯å¾„
+    
+//RxJava
+RxHttp.get("/service/.../xxx.apk")       
+    .asDownload(localPath)
+    .subscribe({                
+        //æˆ�åŠŸå›�è°ƒï¼Œè¿™é‡Œè¿”å›�sdå�¡å­˜å‚¨è·¯å¾„                      
+    }, {                
+        //å¼‚å¸¸å›�è°ƒ                   
+    })
+</code></pre>
+<p>è€Œåˆ°äº†Android 10ï¼Œæˆ‘ä»¬éœ€è¦�è‡ªå®šä¹‰ä¸€ä¸ª<code>Android10DownloadFactory</code>ç±»ï¼Œç»§æ‰¿<code>UriFactory</code>ç±»ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-Kotlin">class Android10DownloadFactory @JvmOverloads constructor(
+    context: Context,
+    fileName: String,
+    queryUri: Uri? = null
+) : UriFactory(context, queryUri, fileName) {
+
+    override fun getUri(response: Response): Uri {
+        return if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.Q) {
+            ContentValues().run {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, fileName) //æ–‡ä»¶å��
+                //å�–contentTypeå“�åº”å¤´ä½œä¸ºæ–‡ä»¶ç±»å�‹
+                put(MediaStore.MediaColumns.MIME_TYPE, response.body?.contentType().toString())
+                //ä¸‹è½½åˆ°Downloadç›®å½•
+                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
+                val uri = queryUri ?: MediaStore.Downloads.EXTERNAL_CONTENT_URI
+                context.contentResolver.insert(uri, this)
+            } ?: throw NullPointerException("Uri insert fail, Please change the file name")
+        } else {
+            Uri.fromFile(File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), displayName))
+        }
+    }
+}
+</code></pre>
+<p>è¿™é‡Œç®€å�•ä»‹ç»�ä¸‹ä¸Šé�¢çš„ä»£ç �ï¼Œæœ¬æ–‡å��ç»­ä¼šè¯¦ç»†ä»‹ç»�ä¸ºå•¥å®šä¹‰è¿™æ ·ä¸€ä¸ªç±»ï¼Œä»¥å�Šå¦‚ä½•æ�„å»ºä¸€ä¸ª<code>Uri</code>å¯¹è±¡ã€‚</p>
+<ul>
+<li>é¦–å…ˆå°±æ˜¯ç»§æ‰¿<code>UriFactory</code>æŠ½è±¡ç±»ï¼Œå®�ç�°<code>getUri(Response)</code>æ–¹æ³•</li>
+<li>æ�¥ç�€å°±åœ¨å®�ç�°æ–¹æ³•é‡Œåˆ¤æ–­SDKç‰ˆæœ¬ï¼ŒAndroid 10ä»¥ä¸Šï¼Œå°±é€šè¿‡<code>contentResolver</code>æ�„å»ºUriå¯¹è±¡ï¼Œå�¦åˆ™å°±æ ¹æ�®<code>File</code>å¯¹è±¡æ�„å»ºUriå¯¹è±¡ï¼Œè¿™æ ·å°±å�¯ä»¥å…¼å®¹åˆ°æ‰€æœ‰ç³»ç»Ÿç‰ˆæœ¬</li>
+<li>æœ€å��è¿”å›�<code>Uri</code>å¯¹è±¡å�³å�¯</li>
+</ul>
+<p><code>æ³¨ï¼šä»¥ä¸Šä»£ç �ï¼ŒåŸºæœ¬å�¯ä»¥æ»¡è¶³å¤§éƒ¨åˆ†äººçš„éœ€æ±‚ï¼Œå¦‚ä½ æœ‰ç‰¹æ®Šéœ€æ±‚ï¼Œæ�„å»ºUriçš„è¿‡ç¨‹çš„ä½œå‡ºç®€å�•çš„ä¿®æ”¹å�³å�¯</code></p>
+<p>æœ‰äº†<code>Android10DownloadFactory</code>ç±»ï¼Œæ‰§è¡Œ<code>Android 10</code>ä¸‹è½½å°±ä¼šå�Šå…¶æ–¹ä¾¿ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-kotlin">val factory = Android10DownloadFactory(context, "test.apk")
+
+//kotlin å��ç¨‹
+val uri = RxHttp.get("/service/.../xxx.apk")       
+    .toDownload(factory)
+    .await()  //è¿™é‡Œè¿”å›�å·¥å�‚ç±»æ�„å»ºçš„Uriå¯¹è±¡
+    
+//RxJava
+RxHttp.get("/service/.../xxx.apk")       
+    .asDownload(factory)
+    .subscribe({                
+        //æˆ�åŠŸå›�è°ƒï¼Œè¿™é‡Œè¿”å›�å·¥å�‚ç±»æ�„å»ºçš„Uriå¯¹è±¡    
+    }, {                
+        //å¼‚å¸¸å¤±è´¥                       
+    })
+</code></pre>
+<p>ä»¥ä¸Š<code>asDownload</code>ã€�<code>toDownload</code>æ–¹æ³•éƒ½æ�¥æ”¶ä¸€ä¸ª<code>UriFactory</code>ç±»å�‹å�‚æ•°ï¼Œæ•…æˆ‘ä»¬å�¯ä»¥ç›´æ�¥ä¼ å…¥<code>Android10DownloadFactory</code>å¯¹è±¡ã€‚</p>
+<h2 id="42ã€�å¸¦è¿›åº¦ä¸‹è½½">4.2ã€�å¸¦è¿›åº¦ä¸‹è½½</h2>
+<p>å¯¹äº�å¸¦è¿›åº¦ä¸‹è½½ï¼Œæˆ‘ä»¬å�ªéœ€è¦�è°ƒç”¨<code>asDownload</code>ã€�<code>toDownload</code>æ–¹æ³•æ—¶ï¼Œä¼ å…¥çº¿ç¨‹è°ƒåº¦å™¨å�Šè¿›åº¦å›�è°ƒå�³å�¯ï¼Œå¦‚ä¸‹ï¼š</p>
+<p>Android 10ä¹‹å‰�</p>
+<pre><code class="language-java">val localPath = "/sdcard/.../xxx.apk"
+
+//kotlin å��ç¨‹
+val result = RxHttp.get("/service/.../xxx.apk")       
+    .toDownload(localPath, Dispatchers.Main) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .await()  //è¿™é‡Œè¿”å›�sdå�¡å­˜å‚¨è·¯å¾„
+    
+//RxJava
+RxHttp.get("/service/.../xxx.apk")       
+    .asDownload(localPath, AndroidSchedulers.mainThread()) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .subscribe({                
+        //æˆ�åŠŸå›�è°ƒï¼Œè¿™é‡Œè¿”å›�sdå�¡å­˜å‚¨è·¯å¾„                      
+    }, {                
+        //å¼‚å¸¸å¤±è´¥                       
+    }) 
+</code></pre>
+<p>Android 10ä»¥ä¸Šï¼Œä¼ å…¥æˆ‘ä»¬å®šä¹‰çš„<code>Android10DownloadFactory</code>å¯¹è±¡çš„å�Œæ—¶ï¼Œå†�ä¼ å…¥ä¼ å…¥çº¿ç¨‹è°ƒåº¦å™¨å�Šè¿›åº¦ç›‘å�¬å�³å�¯ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">val factory = Android10DownloadFactory(context, "test.apk")
+
+//kotlin å��ç¨‹
+val uri = RxHttp.get("/service/.../xxx.apk")       
+    .toDownload(factory, Dispatchers.Main) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .await()  //è¿™é‡Œè¿”å›�å·¥å�‚ç±»æ�„å»ºçš„Uriå¯¹è±¡
+    
+//RxJava
+RxHttp.get("/service/.../xxx.apk")       
+    .asDownload(factory, AndroidSchedulers.mainThread()) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .subscribe({                
+        //æˆ�åŠŸå›�è°ƒï¼Œè¿™é‡Œè¿”å›�å·¥å�‚ç±»æ�„å»ºçš„Uriå¯¹è±¡                      
+    }, {                
+        //å¼‚å¸¸å¤±è´¥                       
+    }) 
+</code></pre>
+<h2 id="43ã€�å¸¦è¿›åº¦æ–­ç‚¹ä¸‹è½½">4.3ã€�å¸¦è¿›åº¦æ–­ç‚¹ä¸‹è½½</h2>
+<p>å¯¹äº�æ–­ç‚¹ä¸‹è½½ï¼Œæˆ‘ä»¬éœ€è¦�è°ƒç”¨ä¸€ç³»åˆ—<code>asAppendDownloadã€�toAppendDownload</code>æ–¹æ³•ï¼Œå�¯ä»¥æŠŠå®ƒä»¬ç�†è§£ä¸ºè¿½åŠ ä¸‹è½½ï¼Œå®�ç�°å¦‚ä¸‹ï¼š</p>
+<p>Android 10ä¹‹å‰�</p>
+<pre><code class="language-java">val localPath = "/sdcard/.../xxx.apk"
+
+//kotlin å��ç¨‹
+val result = RxHttp.get("/service/.../xxx.apk")       
+    .toAppendDownload(localPath, Dispatchers.Main) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .await()  //è¿™é‡Œè¿”å›�sdå�¡å­˜å‚¨è·¯å¾„
+    
+//RxJava
+RxHttp.get("/service/.../xxx.apk")       
+    .asAppendDownload(localPath, AndroidSchedulers.mainThread()) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .subscribe({                
+        //æˆ�åŠŸå›�è°ƒï¼Œè¿™é‡Œè¿”å›�sdå�¡å­˜å‚¨è·¯å¾„                      
+    }, {                
+        //å¼‚å¸¸å¤±è´¥                       
+    }) 
+</code></pre>
+<p>åœ¨Android 10ä¸Šï¼Œæœ‰ä¸€ç‚¹éœ€è¦�æ³¨æ„�çš„æ˜¯ï¼Œæˆ‘ä»¬åœ¨æ�„å»º<code>Android10DownloadFactory</code>å¯¹è±¡æ—¶ï¼Œéœ€è¦�ä¼ å…¥ç¬¬ä¸‰ä¸ªå�‚æ•°<code>queryUri</code>ï¼Œå�¯ä»¥æŠŠå®ƒç�†è§£ä¸ºè¦�æŸ¥è¯¢çš„æ–‡ä»¶å¤¹ï¼Œæ–­ç‚¹ä¸‹è½½ï¼ŒRxHttpå†…éƒ¨ä¼šæ ¹æ�®æ–‡ä»¶å��åœ¨æŒ‡å®šçš„æ–‡ä»¶å¤¹ä¸‹æŸ¥æ‰¾å¯¹åº”çš„æ–‡ä»¶ï¼Œå¾—åˆ°å½“å‰�æ–‡ä»¶çš„é•¿åº¦ï¼Œä¹Ÿå°±æ˜¯æ–­ç‚¹ä½�ç½®ï¼Œä»�è€Œå‘Šè¯‰æœ�åŠ¡ç«¯ä»�å“ªé‡Œå¼€å§‹ä¸‹è½½ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">val queryUri = MediaStore.Downloads.EXTERNAL_CONTENT_URI
+//åœ¨Downloadç›®å½•ä¸‹æŸ¥æ‰¾test.apkæ–‡ä»¶
+val factory = Android10DownloadFactory(context, "test.apk", queryUri)
+
+//kotlin å��ç¨‹
+val uri = RxHttp.get("/service/.../xxx.apk")       
+    .toAppendDownload(factory, Dispatchers.Main) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .await()  //è¿™é‡Œè¿”å›�å·¥å�‚ç±»æ�„å»ºçš„Uriå¯¹è±¡
+    
+//RxJava
+RxHttp.get("/service/.../xxx.apk")       
+    .asAppendDownload(factory, AndroidSchedulers.mainThread()) {
+        //ä¸‹è½½è¿›åº¦å›�è°ƒ,0-100ï¼Œä»…åœ¨è¿›åº¦æœ‰æ›´æ–°æ—¶æ‰�ä¼šå›�è°ƒ       
+        val currentProgress = it.progress //å½“å‰�è¿›åº¦ 0-100   
+        val currentSize = it.currentSize  //å½“å‰�å·²ä¸Šä¼ çš„å­—èŠ‚å¤§å°�   
+        val totalSize = it.totalSize      //è¦�ä¸Šä¼ çš„æ€»å­—èŠ‚å¤§å°�  
+    }
+    .subscribe({                
+        //æˆ�åŠŸå›�è°ƒï¼Œè¿™é‡Œè¿”å›�å·¥å�‚ç±»æ�„å»ºçš„Uriå¯¹è±¡              
+    }, {                
+        //å¼‚å¸¸å¤±è´¥                       
+    }) 
+</code></pre>
+<h1 id="5ã€�å¦‚ä½•æ�„å»ºuriå¯¹è±¡ï¼Ÿ">5ã€�å¦‚ä½•æ�„å»ºUriå¯¹è±¡ï¼Ÿ</h1>
+<p>åœ¨ä¸Šé�¢ä»£ç �ä¸­ï¼Œæˆ‘ä»¬è‡ªå®šä¹‰äº†<code>Android10DownloadFactory</code>ç±»ï¼Œå…¶ä¸­æœ€ä¸ºå…³é”®çš„ä»£ç �å°±æ˜¯å¦‚ä½•æ�„å»ºä¸€ä¸ª<code>Uri</code>å¯¹è±¡ï¼Œæ�¥ä¸‹æ�¥ï¼Œå°±æ•™å¤§å®¶å¦‚ä½•å�»æ�„å»ºä¸€ä¸ª<code>Uri</code>ï¼Œé©¬ä¸Šå¼€å§‹ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">public Uri getUri(Context context) {  
+    ContentValues values = new ContentValues();
+    //1ã€�é…�ç½®æ–‡ä»¶å��                                                          
+    values.put(MediaStore.MediaColumns.DISPLAY_NAME, "1.jpg");
+    //2ã€�é…�ç½®æ–‡ä»¶ç±»å�‹
+    values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+    //3ã€�é…�ç½®å­˜å‚¨ç›®å½•
+    values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DCIM); 
+    //4ã€�å°†é…�ç½®å¥½çš„å¯¹è±¡æ�’å…¥åˆ°æŸ�å¼ è¡¨ä¸­ï¼Œæœ€ç»ˆå¾—åˆ°Uriå¯¹è±¡
+    return context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+}                                                                                                  
+</code></pre>
+<ul>
+<li>
+<p>ç¬¬ä¸€æ­¥ï¼Œé…�ç½®æ–‡ä»¶å��ç§°ï¼Œè¿™ä¸ªå°±æ²¡å•¥å¥½è¯´çš„äº†</p>
+</li>
+<li>
+<p>ç¬¬äºŒæ­¥ï¼Œé…�ç½®æ–‡ä»¶ç±»å�‹ï¼Œæ¯�ä¸ªæ–‡ä»¶éƒ½åº”è¯¥æœ‰ä¸€ä¸ªç±»å�‹æ��è¿°ï¼Œè¿™æ ·ï¼Œå��ç»­æŸ¥æ‰¾æ—¶ï¼Œå°±å�¯ä»¥æ ¹æ�®è¿™ä¸ªç±»å�‹å�»æŸ¥æ‰¾å‡ºå�Œä¸€ç±»å�‹çš„æ–‡ä»¶ï¼Œå¦‚:æŸ¥æ‰¾ç›¸å†Œï¼Œæ­¤å±�æ€§æ˜¯å�¯é€‰çš„ï¼Œå¦‚æ�œä¸�é…�ç½®ï¼Œå��ç»­å°±æ— æ³•æ ¹æ�®ç±»å�‹æŸ¥æ‰¾åˆ°è¿™ä¸ªæ–‡ä»¶</p>
+</li>
+<li>
+<p>ç¬¬ä¸‰æ­¥ï¼Œé…�ç½®å­˜å‚¨ç›®å½•ï¼Œè¿™ä¸ªæ˜¯ç›¸å¯¹è·¯å¾„ï¼Œæ€»å…±æœ‰10ä¸ªç›®å½•å�¯é€‰ï¼Œå¦‚ä¸‹ï¼š</p>
+<ul>
+<li><code>Environment.DIRECTORY_DOCUMENTS</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Documents/</code></li>
+<li><code>Environment.DIRECTORY_DOWNLOADS</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Download/</code></li>
+<li><code>Environment.DIRECTORY_DCIM</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/DCIM/</code></li>
+<li><code>Environment.DIRECTORY_PICTURES</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Pictures/</code></li>
+<li><code>Environment.DIRECTORY_MOVIES</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Movies/</code></li>
+<li><code>Environment.DIRECTORY_ALARMS</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Alrams/</code></li>
+<li><code>Environment.DIRECTORY_MUSIC</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Music/</code></li>
+<li><code>Environment.DIRECTORY_NOTIFICATIONS</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Notifications/</code></li>
+<li><code>Environment.DIRECTORY_PODCASTS</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Podcasts/</code></li>
+<li><code>Environment.DIRECTORY_RINGTONES</code>  å¯¹åº”è·¯å¾„ï¼š<code>/storage/emulated/0/Ringtones/</code></li>
+</ul>
+</li>
+</ul>
+<p>å¦‚æ�œéœ€è¦�åœ¨ä»¥ä¸Šç›®å½•ä¸‹ï¼Œåˆ›å»ºå­�ç›®å½•ï¼Œåˆ™ä¼ å…¥çš„æ—¶å€™ï¼Œç›´æ�¥å¸¦ä¸Šå�³å�¯ï¼Œå¦‚ä¸‹</p>
+<pre><code class="language-java">values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DCIM + "/RxHttp"); 
+</code></pre>
+<ul>
+<li>
+<p>ç¬¬å››æ­¥ï¼Œæ�’å…¥åˆ°å¯¹åº”çš„è¡¨ä¸­ï¼Œæ€»å…±æœ‰5å¼ è¡¨å�¯é€‰ï¼Œå¦‚ä¸‹ï¼š</p>
+<ul>
+<li>å­˜å‚¨å›¾ç‰‡ï¼š<code>MediaStore.Images.Media.EXTERNAL_CONTENT_URI</code></li>
+<li>å­˜å‚¨è§†é¢‘ï¼š<code>MediaStore.Video.Media.EXTERNAL_CONTENT_URI</code></li>
+<li>å­˜å‚¨éŸ³é¢‘ï¼š<code>MediaStore.Audio.Media.EXTERNAL_CONTENT_URI</code></li>
+<li>å­˜å‚¨ä»»æ„�æ–‡ä»¶ï¼š<code>MediaStore.Downloads.EXTERNAL_CONTENT_URI</code></li>
+<li>å­˜å‚¨ä»»æ„�æ–‡ä»¶ï¼š<code>MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL)</code></li>
+</ul>
+</li>
+</ul>
+<p>éœ€è¦�ç‰¹æ®Šè¯´æ˜�ä¸‹ï¼Œä»¥ä¸Š5å¼ è¡¨ä¸­ï¼Œå�ªèƒ½å­˜å…¥å¯¹åº”æ–‡ä»¶ç±»å�‹çš„ä¿¡æ�¯ï¼Œå¦‚æˆ‘ä»¬ä¸�èƒ½å°†éŸ³é¢‘æ–‡ä»¶ä¿¡æ�¯ï¼Œæ�’å…¥åˆ°<code>MediaStore.Images.Media.EXTERNAL_CONTENT_URI</code>å›¾ç‰‡è¡¨ä¸­ï¼Œæ�’å…¥æ—¶ï¼Œç³»ç»Ÿä¼šç›´æ�¥æŠ›å‡ºå¼‚å¸¸</p>
+<p><em><strong>æ³¨æ„�äº‹é¡¹</strong></em></p>
+<p>ä»¥ä¸Š5å¼ è¡¨ä¸­ï¼Œé™¤äº†å¯¹æ�’å…¥çš„æ–‡ä»¶ç±»å�‹æœ‰é™�åˆ¶å¤–ï¼Œè¿˜å¯¹è¦�æ�’å…¥çš„ç›¸å¯¹è·¯å¾„æœ‰é™�åˆ¶ï¼Œå¦‚ï¼Œæˆ‘ä»¬å°†ä¸€ä¸ªapkæ–‡ä»¶ä¸‹è½½<code>/storage/emulated/0/Download/RxHttp/</code>ç›®å½•ä¸‹ï¼Œå¹¶æ�’å…¥åˆ°å›¾ç‰‡è¡¨ä¸­ï¼Œå¦‚ä¸‹ï¼š</p>
+<pre><code class="language-java">public Uri getUri(Context context) {  
+    ContentValues values = new ContentValues();
+    values.put(MediaStore.MediaColumns.DISPLAY_NAME, "1.apk");
+    values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS + "/RxHttp"); 
+    return context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+}         
+</code></pre>
+<p>å½“æ‰§è¡Œåˆ°<code>insert</code>æ“�ä½œæ—¶ï¼Œç³»ç»Ÿå°†ä¼šç›´æ�¥æŠ¥é”™ï¼ŒæŠ¥é”™ä¿¡æ�¯å¦‚ä¸‹:</p>
+<p><code>Primary directory Download not allowed for content://media/external/images/media; allowed directories are [DCIM, Pictures]</code></p>
+<p>å¤§è‡´æ„�æ€�å°±æ˜¯ï¼Œ<code>Download</code>ç›®å½•ä¸�å…�è®¸æ�’å…¥åˆ°<code>MediaStore.Images.Media.EXTERNAL_CONTENT_URI</code>è¡¨ä¸­ï¼Œè¯¥è¡¨å�ªå…�è®¸æ�’å…¥<code>DCIM</code>å’Œ<code>Pictures</code>ç›®å½•</p>
+<h1 id="6ã€�å°�ç»“">6ã€�å°�ç»“</h1>
+<p>å¼€æº�ä¸�æ˜“ï¼Œå†™æ–‡ç« æ›´ä¸�æ˜“ï¼Œå–œæ¬¢çš„è¯�ï¼Œè¿˜éœ€åŠ³çƒ¦å¤§å®¶ç»™æœ¬æ–‡ç‚¹ä¸ªèµ�ï¼Œå�¯ä»¥çš„è¯�ï¼Œå†�ç»™ä¸ª<a href="https://github.com/liujingxing/okhttp-RxHttp" target="_blank">star</a>ï¼Œæˆ‘å°†æ„Ÿæ¿€ä¸�å°½ï¼ŒğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�ğŸ™�</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2020-12-26 22:33</span>&nbsp;
+<a href="https://www.cnblogs.com/liujingxing/">åˆ˜æ•¬å…´</a>&nbsp;
+é˜…è¯»(<span id="post_view_count">19</span>)&nbsp;
+è¯„è®º(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14194757" rel="nofollow">ç¼–è¾‘</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(14194757);return false;">æ”¶è—�</a></div>
+	</div>
+	
+	
+</div><!--end: topics æ–‡ç« ã€�è¯„è®ºå®¹å™¨-->
+<script src="https://common.cnblogs.com/highlight/10.3.1/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 294650, cb_blogApp = 'liujingxing', cb_blogUserGuid = '1f476644-044c-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 14194757, cb_entryCreatedDate = '2020-12-26 22:33', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">åˆ·æ–°è¯„è®º</a><a href="#" onclick="return RefreshPage();">åˆ·æ–°é¡µé�¢</a><a href="#top">è¿”å›�é¡¶éƒ¨</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+       loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+   </script>
+</div>
+
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent ä¸»ä½“å†…å®¹å®¹å™¨-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar ä¾§è¾¹æ �å®¹å™¨ -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 åˆ˜æ•¬å…´
+<br /><span id="poweredby">Powered by .NET 5.0.1-servicing.20575.16 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home è‡ªå®šä¹‰çš„æœ€å¤§å®¹å™¨ -->
+
+
+    
+</body>
+</html>

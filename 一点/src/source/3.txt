@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta name="description" content="早前开展的计划因各种杂事而泡汤，而当遇到了具体任务后，在压力下花了两个多周的业余时间把这件事完成了。 这就是我的引以为傲的Mercury-Project，它的核心目标是移植一些Android底层轮子到" />
+    <meta property="og:description" content="早前开展的计划因各种杂事而泡汤，而当遇到了具体任务后，在压力下花了两个多周的业余时间把这件事完成了。 这就是我的引以为傲的Mercury-Project，它的核心目标是移植一些Android底层轮子到" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Android基础工具移植说明 - OnlyTime_唯有时光 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=R2wBwmwSMG0Sqiw8GFSVjHT4Payg_JFAn51R8XcuvN0" />
+    <link id="MainCss" rel="stylesheet" href="/skins/autumn/bundle-autumn.min.css?v=8aS7ai3_cLRSbwu26g27U0lfWU1fdnLCufx65Z9XoKE" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/autumn/bundle-autumn-mobile.min.css?v=iwyTBCq0yI4S4G_W1Q6v2XTVbfYZ47nSVT8NVCgIXiI" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/Dreaming-in-Gottingen/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/Dreaming-in-Gottingen/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/Dreaming-in-Gottingen/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 535199;
+        var currentBlogApp = 'Dreaming-in-Gottingen';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Autumn';
+        var visitorUserId = '';
+    </script>
+        <script>
+            var currentPostDateAdded = '2020-12-27 01:24';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=V0BbkkQE24zt1D_4TRGfRwcCB1E3YoBpH5YOp1qKoxA"></script>
+    
+    
+    
+</head>
+<body class="has-navbar has-bannerbar">
+    <a name="top"></a>
+            <a href="https://brands.cnblogs.com/aws/free?source=blog-bannerbar" onclick="ga('send', 'event', 'Link', 'click', 'aws-pc-bannerbar')">
+                <div class="bannerbar aws forpc">
+                    <img class="left" src="https://common.cnblogs.com/images/banner/bannerbar-aws-logo.png" alt="" />
+                    <img class="right" src="https://common.cnblogs.com/images/banner/bannerbar-aws-ssh.png?v=2" alt="" />
+                </div>
+            </a>
+            <div id="bannerbar" class="bannerbar-mobile formobile">
+                <a href="https://brands.cnblogs.com/aws/free?source=mobile-banner" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'aws-mobile-bannerbar')">
+                    <img src="https://img2020.cnblogs.com/blog/35695/202012/35695-20201211073419417-355442931.jpg" alt="" />
+                </a>
+            </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=oS4PkibyMjZ9rGD5XAcLt99uW_s76Javy2up4dbnZNY" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" onclick="logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <table id="blog_header" cellspacing="0" cellpadding="0" border="0" class="banner">
+    <tr>
+        <td width="61">
+            &nbsp;
+        </td>
+        <td width="236" align="center">
+            
+<br><br><br><br><br><br><br>
+<div id="header">
+	<span>
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/Dreaming-in-Gottingen/">OnlyTime_唯有时光</a>
+<br/><br/>
+		
+	</span>
+</div>
+
+
+        </td>
+        <td style="padding-bottom: 30px" align="center" valign="bottom">
+            &nbsp;
+        </td>
+    </tr>
+</table>
+<table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td width="60">
+            &nbsp;
+        </td>
+        <td id="sidebar" valign="top" s>
+            <table align="center" width="100%" height="1400" cellspacing="0" cellpadding="5" border="0" bgcolor="white">
+                <tr>
+                    <td class="banner" valign="top" style="padding-top: 0px">
+
+                        <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                        <div id="blog-sidecolumn"></div>
+                        <script>loadBlogSideColumn();</script>
+
+                        <br />
+                        <center>
+                            Powered by <a href="http://www.cnblogs.com">博客园</a>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td valign="top" style="padding: 0">
+            <table align="center" width="100%" height="1400" cellspacing="0" cellpadding="5" border="0" bgcolor="white" class="index">
+                <tr>
+                    <td class="banner" valign="top">
+                        <center>
+                            
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ <span id="sitehome_link_split">|</span> 
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/Dreaming-in-Gottingen/">
+首页</a>
+ <span id="bloghome_link_split">|</span> 
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ <span id="newpost_link_split">|</span> 
+<!--<asp:HyperLink  Runat="server" CssClass="menu" NavigateUrl="/EnterMyBlog.aspx?NewArticle=1" Text="发新文章" ID="NewArticleLink" /> | -->
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/OnlyTime_%E5%94%AF%E6%9C%89%E6%97%B6%E5%85%89">
+联系</a> <span id="contact_link_split">|</span>  
+
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/Dreaming-in-Gottingen/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/Dreaming-in-Gottingen/rss/">
+    <img src="/skins/autumn/images/xml.gif" alt="订阅" />
+</a> <span id="rss_link_split">|</span> 
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+
+                        </center>
+                        <div id="post_detail">
+    <div class="block">
+        <h1 class="block_title">
+            
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/Dreaming-in-Gottingen/p/14195135.html">
+    <span>Android基础工具移植说明</span>
+    
+
+
+</a>
+
+        </h1>
+        <div class="post">
+            <div class="postcontent">
+                
+<div id="cnblogs_post_body" class="blogpost-body">
+    <p><span style="font-size: 16px">早前开展的<strong><span style="color: rgba(0, 0, 255, 1)"><a href="https://www.cnblogs.com/Dreaming-in-Gottingen/p/12052291.html" target="_blank"><span style="color: rgba(0, 0, 255, 1)">计划</span></a></span></strong>因各种杂事而泡汤，而当遇到了具体任务后，在压力下花了两个多周的业余时间把这件事完成了。</span></p>
+<p><span style="font-size: 16px">这就是我的引以为傲的<strong><span style="color: rgba(0, 0, 255, 1)"><a href="https://github.com/Dreaming-in-Gottingen/Mercury-Project" target="_blank"><span style="color: rgba(0, 0, 255, 1)">Mercury-Project</span></a></span></strong>，它的核心目标是移植一些Android底层轮子到Linux平台上。</span></p>
+<p><span style="color: rgba(255, 0, 0, 1)"><strong><span style="font-size: 18px">1. 为什么要做这件事？</span></strong></span></p>
+<p><span style="font-size: 18px">　　<span style="font-size: 16px">Android的SDK是一个大而全的东西，有很多工具可供移植和使用，例如，安卓的MPEG4Writer，MPEG2TSWriter，OpenMAX、MediaCodec等，实现的很优美和完善。</span></span></p>
+<p><span style="font-size: 16px">我常常想学习这些子模块是如何实现的，那么就需要有一套SDK环境，修改代码编译后，再将so库放到手机中跑，但是这种调试方式有些缺陷：依赖手机硬件、编译时间漫长。</span></p>
+<p><span style="font-size: 16px">　　因此，产生了这种想法：如何将这些基础工具进行跨平台化，移植到通用的Linux平台上？</span></p>
+<p><span style="color: rgba(255, 0, 0, 1)"><strong><span style="font-size: 18px">2. 移植基础库的先后顺序性是什么？</span></strong></span></p>
+<p><span style="font-size: 16px">　　如果想做一个Linux平台的记录仪方案，那么就需要用到封装模块（muxer），怎么搞这个呢？手撸一个稳定、兼容性较强的ts_muxer，没有十天时间肯定搞不定，那么一个</span></p>
+<p><span style="font-size: 16px">捷径是移植现有成熟的方案，</span><span style="font-size: 16px">例如从FFmpeg的libavformat中抄过来，或者移植Android的MPEG2TSWriter（这个模块其实是muxer+writer），抄FFmpeg的较容易，但是抄Android</span></p>
+<p><span style="font-size: 16px">的不是那么容易，因为依赖Andorid的底层基础库。</span></p>
+<p><span style="font-size: 16px">　　例如，MPEG2TSWriter模块，用到了管理类对象的sp/RefBase，用到了消息/反射机制ALooper/AMessage/AHander。</span></p>
+<p><span style="font-size: 16px">　　前者是安卓大厦的根基之一（实现路径：system/core/libutils），任何native层开发几乎都离不开它；</span></p>
+<p><span style="font-size: 16px">　　后者是native层中多媒体系统子模块开发的基础工具（路径为<span style="color: rgba(0, 0, 255, 1)"><strong><a href="frameworks/av/media/libstagefright/foundation/" target="_blank"><span style="color: rgba(0, 0, 255, 1)">这个</span></a></strong></span>：frameworks/av/media/libstagefright/foundation/），从名字foundation中也可以看到端倪，这里要补充一点：</span></p>
+<p><span style="font-size: 16px">这个foundation其实又是依赖libutils的，</span><span style="font-size: 16px">它是对libutils的更上一层的封装。</span></p>
+<p><span style="font-size: 16px">　　因此，可以初步总结出，其依赖链：MPEG2TSWriter -&gt; foundation -&gt; libutils。</span></p>
+<p><span style="font-size: 16px">　　libutils又依赖什么？Bionic！这个是什么呢？是Android版的标准C库，等价于通用Linux平台的glibc库。二者都是C标准库的不同实现方式，其提供的接口、功能行为在不同平台上</span></p>
+<p><span style="font-size: 16px">都是一致的，</span><span style="font-size: 16px">因此移植工作可以在libutils这一层次上结束。</span></p>
+<p><span style="font-size: 16px">　　因袭，结论是：移植的先后顺序，先libutils，再foundation，最后MPEG2TSWriter。</span></p>
+<p><strong><span style="font-size: 18px; color: rgba(255, 0, 0, 1)">3. Android为什么搞这么复杂？</span></strong></p>
+<p><span style="font-size: 16px">　　确实是比较复杂，但层次性非常好！一个东西流行必有其内部脊髓所在！这也是安卓生态圈繁荣的根源吧。</span></p>
+<p><span style="font-size: 16px">　　软件开发，一个非常重要的概念，就是分层，这个跟其他行业类似。</span></p>
+<p><span style="font-size: 16px">　　例如，我D目前收割群众的主要方式——房地产行业。</span></p>
+<p><span style="font-size: 16px">　　</span><span style="font-size: 16px">盖房子，其实也分很多层次，最底层是最廉价，也是最容易被人忽略的，也是最重要的。</span></p>
+<p><span style="font-size: 16px">　　盖房子最底层是什么呢？做砖头这一古老行业！再往上一层是批发经销砖头的，再往上是施工工程队。</span></p>
+<p><span style="font-size: 16px">　　施工工程队可以对比于软件开发的上层，它不可能什么事情都要亲力亲为，例如从开砖窑厂、挖泥巴、烧制砖头开始搞？那岂不又回到了原始社会！</span></p>
+<p><span style="font-size: 16px">　　现代社会的主要特点是精细的社会分工，每个人都干自己擅长的事情，大家的劳动成果整合起来，形成一件完美的艺术品。</span></p>
+<p><strong><span style="font-size: 18px; color: rgba(255, 0, 0, 1)">4. Mercury-Project名字的由来</span></strong></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp;Mercury中文名称为“水星”，是太阳系中最内层的行星。</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp;起名字也是一门哲学，每个人都有一个名字，大家有谁想过人为什么要起名字？哈哈。。。</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp;起这个名字，绝不是意味着我要或者我想移民水星！！！水星朝向太阳一面温度400多度，背向的将近零下200度，那谁受得了？！</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp;NASA发射的水星探测器也几乎受不了，呵呵。。。</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp;起这个名字寓意Android就是那个太阳，水星要吸收太阳散发出来的光和热！</span></p>
+<p><strong><span style="font-size: 18px; color: rgba(255, 0, 0, 1)">5. 项目目前进展</span></strong></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; libutils大部分工具已移植完毕，foundation中常用的工具移植完毕，并且针对这两个库中提供的工具，编写了诸多测试用例。</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; 下一步的任务，是把libutils中全部工具都移植完毕，</span><span style="font-size: 16px">再有就是，对移植的工具，编写齐全的demo case进行验证。</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp;时间允许的话，我尽可能针对每一种工具的内部实现原理的进行介绍。</span></p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="itemdesc">
+                发表于 
+<span id="post-date">2020-12-27 01:24</span>&nbsp;
+<a href="https://www.cnblogs.com/Dreaming-in-Gottingen/">OnlyTime_唯有时光</a>&nbsp;
+阅读(<span id="post_view_count">50</span>)&nbsp;
+评论(<span id="post_comment_count">1</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14195135" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(14195135);return false;">收藏</a>
+            </div>
+        </div>
+        <div class="seperator">&nbsp;</div>
+    </div>
+</div>
+
+
+<script src="https://common.cnblogs.com/highlight/10.3.1/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 535199, cb_blogApp = 'Dreaming-in-Gottingen', cb_blogUserGuid = 'd40777d4-4ae3-45c6-ec77-08d7188de755';
+    var cb_entryId = 14195135, cb_entryCreatedDate = '2020-12-27 01:24', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+       loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+   </script>
+</div>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+    
+</body>
+</html>

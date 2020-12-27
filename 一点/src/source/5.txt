@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta name="description" content="Hyperledger fabric-SDK-GO客户端开发篇（六） Fabric-SDK-GO是提供的Go语言开发包，应用程序可以利用Fabric-SDK-GO与fabric网络进行交互并访问链码。" />
+    <meta property="og:description" content="Hyperledger fabric-SDK-GO客户端开发篇（六） Fabric-SDK-GO是提供的Go语言开发包，应用程序可以利用Fabric-SDK-GO与fabric网络进行交互并访问链码。" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hyperledger fabric-SDK-GO客户端开发篇（六） - 风云傲天 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=R2wBwmwSMG0Sqiw8GFSVjHT4Payg_JFAn51R8XcuvN0" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=1gj9-XJKL9BZFkjdvROYQPiPWjQXk-hsXXZGtqkfaSc" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=pdepUFJo7cpvzQktAZqHoGL4g936wIXvGsP3R063Gn8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/liuhui5599/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/liuhui5599/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/liuhui5599/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 314210;
+        var currentBlogApp = 'liuhui5599';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+    </script>
+        <script>
+            var currentPostDateAdded = '2020-12-27 10:16';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=V0BbkkQE24zt1D_4TRGfRwcCB1E3YoBpH5YOp1qKoxA"></script>
+    
+    
+    
+</head>
+<body class="has-navbar has-bannerbar">
+    <a name="top"></a>
+            <a href="https://brands.cnblogs.com/aws/free?source=blog-bannerbar" onclick="ga('send', 'event', 'Link', 'click', 'aws-pc-bannerbar')">
+                <div class="bannerbar aws forpc">
+                    <img class="left" src="https://common.cnblogs.com/images/banner/bannerbar-aws-logo.png" alt="" />
+                    <img class="right" src="https://common.cnblogs.com/images/banner/bannerbar-aws-ssh.png?v=2" alt="" />
+                </div>
+            </a>
+            <div id="bannerbar" class="bannerbar-mobile formobile">
+                <a href="https://brands.cnblogs.com/aws/free?source=mobile-banner" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'aws-mobile-bannerbar')">
+                    <img src="https://img2020.cnblogs.com/blog/35695/202012/35695-20201211073419417-355442931.jpg" alt="" />
+                </a>
+            </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=oS4PkibyMjZ9rGD5XAcLt99uW_s76Javy2up4dbnZNY" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" onclick="logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/liuhui5599/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/liuhui5599/">刘辉</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/liuhui5599/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E9%A3%8E%E4%BA%91%E5%82%B2%E5%A4%A9">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/liuhui5599/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<span id="stats_post_count">随笔 - 33&nbsp; </span>
+<span id="stats_article_count">文章 - 2&nbsp; </span>
+<span id="stats-comment_count">评论 - 2</span>
+
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/liuhui5599/p/14195513.html">
+    <span>Hyperledger fabric-SDK-GO客户端开发篇（六）</span>
+    
+
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="hyperledger-fabric-sdk-go客户端开发篇（六）">Hyperledger fabric-SDK-GO客户端开发篇（六）</h1>
+<p>Fabric-SDK-GO是提供的Go语言开发包，应用程序可以利用Fabric-SDK-GO与fabric网络进行交互并访问链码。</p>
+<p>软件开发包地址：<a href="https://github.com/hyperledger/fabric-sdk-go" target="_blank">https://github.com/hyperledger/fabric-sdk-go</a></p>
+<h1 id="11、目录介绍">1.1、目录介绍</h1>
+<blockquote>
+<p>pkg目录是fabric go sdk的主要实现，doc文档介绍了不同目录所提供的功能，以及给出了接口调用样例：</p>
+<ul>
+<li>pkg/fabsdk：主package，主要用来生成fabsdk以及fabric go sdk中其他pkg使用的option context。</li>
+<li>pkg/client/channel：主要用来调用、查询Fabric链码，或者注册链码事件。</li>
+<li>pkg/client/resmgmt：主要用来Hyperledger fabric网络的管理，比如创建通道、加入通道，安装、实例化和升级链码。</li>
+<li>pkg/client/event:配合channel模块来进行Fabric链码事件的注册和过滤。</li>
+<li>pkg/client/ledger：主要用来实现Fabric账本的查询，查询区块、交易、配置等。</li>
+<li>pkg/client/msp：主要用来管理fabric网络中的成员关系。</li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="fabsdk包">fabsdk包</h2>
+<ul>
+<li>FabricSDK - sdk入口</li>
+<li>fabsdk.New() - 创建FabricSDK实例</li>
+<li>sdk.ChannelContext() - 创建通道上下文实例</li>
+<li>sdk.Close() - 关闭FabricSDK实例</li>
+<li>sdk.CloseContext() - 关闭指定的上下文实例</li>
+<li>sdk.Config() - 创建配置后端实例</li>
+<li>sdk.Context() - 创建SDK上下文实例</li>
+<li>fabsdk.ContextOption - SDK上下文配置结构定义</li>
+<li>fabsdk.WithIdentity() - 创建身份上下文配置对象</li>
+<li>fabsdk.WithOrg() - 创建机构上下文配置对象</li>
+<li>fabsdk.WithUser() - 创建用户上下文配置对象</li>
+<li>fabsdk.Option - SDK配置结构定义</li>
+<li>fabsdk.WithCorePkg() - 向SDK注入核心包</li>
+<li>fabsdk.WithCryptoSuiteConfig() - 向SDK注入密码学套件接口</li>
+<li>fabsdk.WithEndpointConfig() - 向SDK注入端结点配置接口</li>
+<li>fabsdk.WithErrorHandler() - 设置错误处理程序</li>
+<li>fabsdk.WithIdentityConfig() - 向SDK注入身份配置接口</li>
+<li>fabsdk.WithLoggerPkg() - 向SDK注入日志实现</li>
+<li>fabsdk.WithMSPPkg() - 向SDK注入MSP实现</li>
+<li>fabsdk.WithMetricsConfig() - 向SDK注入监视指标配置接口</li>
+<li>fabsdk.WithProviderOpts() - 向提供器添加额外的选项</li>
+<li>fabsdk.WithServicePkg() - 向SDK注入服务实现</li>
+</ul>
+<h2 id="clientchannel包">client/channel包</h2>
+<ul>
+<li>channel.Client - 通道客户端结构定义</li>
+<li>channel.New() - 创建通道客户端</li>
+<li>cc.Execute() - 执行交易</li>
+<li>cc.InvokeHandler() - 调用指定的处理器</li>
+<li>cc.Query() - 查询链码</li>
+<li>cc.RegisterChaincodeEvent() - 监听链码事件</li>
+<li>cc.UnregisterChaincodeEvent() - 取消监听链码事件</li>
+<li>channel.ClientOption - 客户端选项结构定义</li>
+<li>channel.Request - 链码请求结构定义</li>
+<li>channle.RequestOption - 链码请求选项函数</li>
+<li>channel.WithBeforeRetry() - 设置链码请求重试前需调用的函数</li>
+<li>channel.WithChaincodeFilter() - 为链码请求添加链码过滤器</li>
+<li>channel.WithParentContext() - 为链码请求封装父级上下文</li>
+<li>channel.WithRetry() - 为链码请求配置重试参数</li>
+<li>channel.WithTargetEndpoints() - 为链码请求配置访问端结点</li>
+<li>channel.WithTargetFilter() - 为特定链码请求指定节点过滤器</li>
+<li>channel.WithTargetSorter() - 对特定链码请求指定排序器</li>
+<li>channel.WithTargets() - 为链码请求设置目标peer节点</li>
+<li>channel.WithTimeout() - 为链码请求设置超时参数</li>
+<li>channel.Response - 链码响应结构定义</li>
+</ul>
+<h2 id="clientevent包">client/event包</h2>
+<ul>
+<li>event.Client - 通道事件客户端结构定义</li>
+<li>event.New() - 创建通道事件客户端</li>
+<li>ec.RegisterBlockEvent() - 监听区块事件</li>
+<li>ec.RegisterChaincodeEvent() - 监听链码事件</li>
+<li>ec.RegisterFilteredBlockEvent() - 监听过滤的区块事件</li>
+<li>ec.RegisterTxStatusEvent() - 监听交易状态事件</li>
+<li>ec.Unregister() - 取消事件监听</li>
+<li>event.ClientOption - 通道事件客户端选项结构定义</li>
+<li>event.WithBlockEvents() - 创建监听区块事件的选项</li>
+<li>event.WithBlockNum() - 只监听指定编号的区块</li>
+<li>evnet.WithSeekType() - 指定区块定位类型</li>
+</ul>
+<h2 id="clientledger包">client/ledger包</h2>
+<ul>
+<li>ledger.Client - 账本客户端结构定义</li>
+<li>ledger.New() - 创建账本客户端实例</li>
+<li>lc.QueryBlock() - 按编号查询区块</li>
+<li>lc.QueryBlockByHash() - 按哈希查询区块</li>
+<li>lc.QueryBlockByTxID() - 查询包含指定交易的区块</li>
+<li>lc.QueryConfig() - 查询通道配置</li>
+<li>lc.QueryConfigBlock() - 查询指定通道的当前配置区块</li>
+<li>lc.QueryInfo() - 查询指定通道的相关信息</li>
+<li>lc.QueryTransaction() - 查询指定的交易</li>
+<li>ClientOption - 账本客户端选项结构定义</li>
+<li>ledger.WithDefaultTargetFilter - 使用默认的节点过滤器</li>
+<li>RequestOption - 请求选项函数</li>
+<li>ledger.WithMaxTargets - 声明每个请求最多可以选择的节点</li>
+<li>ledger.WithMinTargets - 声明每个请求最少需要的响应</li>
+<li>ledger.WithParentContext - 使用父级上下文</li>
+<li>ledger.WithTargetEndpoints - 使用指定的访问端节点</li>
+<li>ledger.WithTargetFilter - 声明节点选择过滤器</li>
+<li>ledger.WithTargets - 为特定请求指定目标节点</li>
+<li>ledger.WithTimeout - 指定账本客户端的超时参数</li>
+</ul>
+</blockquote>
+<h1 id="12、一般步骤">1.2、一般步骤</h1>
+<ul>
+<li>编写config.yaml配置文件，给应用程序所使用的 Fabric-SDK-Go 配置相关参数及 Fabric 组件的通信地址</li>
+<li>使用配置实例化fabsdk实例。<br>
+注意：fabsdk维护缓存，因此您应尽量减少fabsdk本身的实例。</li>
+<li>使用fabsdk实例基于用户和组织创建上下文。<br>
+注意：通道上下文还需要通道ID。</li>
+<li>使用其New函数创建一个客户端实例，并传递上下文。<br>
+注意：您需要为每个上下文创建一个新的客户端实例。</li>
+<li>使用每个客户提供的功能来创建您的解决方案！</li>
+<li>调用fabsdk.Close（）释放资源和缓存。</li>
+</ul>
+<h1 id="13、configyaml配置文件">1.3、config.yaml配置文件</h1>
+<p>client使用sdk与fabric网络交互，需要告诉sdk两类信息：</p>
+<ul>
+<li>我是谁：即当前client的信息，包含所属组织、密钥和证书文件的路径等， 这是每个client专用的信息。</li>
+<li>对方是谁：即fabric网络结构的信息，channel、org、orderer和peer等   的怎么组合起当前fabric网络的，这些结构信息应当与configytx.yaml中是一致的。这是通用配置，每个客户端都可以拿来使用。另外，这部分信息并不需要是完整fabric网络信息，如果当前client只和部分节点交互，那配置文件中只需要包含所使用到的网络信息。</li>
+</ul>
+<p>![](/home/liuhui/文档/hyperledge  Fabric/config-yaml.png)</p>
+<h1 id="14、使用go-mod管理项目依赖">1.4、使用go mod管理项目依赖</h1>
+<p>fabric go sdk目前本身使用go modules管理依赖，从go.mod可知，依赖的一些包指定了具体的版本， 如果你的项目依赖的版本和fabric go sdk依赖的版本不同，会产生编译问题。</p>
+<p>因此建议项目也使用go moudles管理依赖，然后相同的软件包可以使用相同的版本，可以这样操作：</p>
+<ul>
+<li>go mod init初始化好项目的go.mod文件。</li>
+<li>编写代码，完成后运行go mod run，会自动下载依赖的项目，但版本可能与   fabric go sdk中的依赖版本不同，编译存在问题。</li>
+<li>把go.mod中的内容复制到项目的go.mod中，然后保存，go mod会自动合并相同的依赖，  运行go mod tidy，会自动添加新的依赖或删除不需要的依赖。</li>
+</ul>
+<h1 id="15、创建fabric-sdk-go入口实例">1.5、创建fabric-SDK-GO入口实例</h1>
+<p>通过config.FromFile解析配置文件，然后通过fabsdk.New创建fabric go sdk的入口实例。</p>
+<pre><code class="language-go">import "github.com/hyperledger/fabric go sdk/pkg/core/config"
+import "github.com/hyperledger/fabric go sdk/pkg/fabsdk"
+
+sdk, err := fabsdk.New(config.FromFile(c.ConfigPath))
+if err != nil {
+  log.Panicf("failed to create fabric sdk: %s", err)
+}
+</code></pre>
+<h1 id="16、创建fabric-sdk-go的资源管理客户端">1.6、创建fabric-SDK-GO的资源管理客户端</h1>
+<p>管理员账号才能进行Hyperledger fabric网络的管理操作，所以创建资源管理客户端一定要使用管理员账号。</p>
+<p>通过<code>fabsdk.WithOrg("Org1")</code>和<code>fabsdk.WithUser("Admin")</code>指定Org1的Admin账户，使用<code>sdk.Context</code>创建<code>clientProvider</code>，然后通过<code>resmgmt.New</code>创建fabric-SDK-GO资源管理客户端。</p>
+<pre><code>import 	"github.com/hyperledger/fabric go sdk/pkg/client/resmgmt"
+
+rcp := sdk.Context(fabsdk.WithUser("Admin"), fabsdk.WithOrg("Org1"))
+rc, err := resmgmt.New(rcp)
+if err != nil {
+  log.Panicf("failed to create resource client: %s", err)
+}
+</code></pre>
+<h1 id="17、创建fabric-sdk-go的通道客户端">1.7、创建fabric-SDK-GO的通道客户端</h1>
+<p>使用用户账号创建fabric-SDK-GO的通道客户端，以便进行fabric链码的调用和查询。使用sdk.ChannelContext创建channelProvider，需要指定channelID和用户User1，然后通过channel.New创建通道客户端，这个通道客户端就是调用channelID对应channel上链码的channel client。</p>
+<p>################两种方法可以创建通道客户端#####################</p>
+<p>方法一：</p>
+<pre><code class="language-go">import 	"github.com/hyperledger/fabric go sdk/pkg/client/channel"
+
+ccp := sdk.ChannelContext(ChannelID, fabsdk.WithUser("User1"))
+cc, err := channel.New(ccp)
+if err != nil {
+  log.Panicf("failed to create channel client: %s", err)
+}
+</code></pre>
+<p>方法二：</p>
+<pre><code class="language-go">// New creates a new Client instance
+	mspClient, err := mspclient.New(sdk.Context(), mspclient.WithOrg(info.OrgName))
+	if err != nil {
+		return fmt.Errorf("根据指定的 OrgName 创建 Org MSP 客户端实例失败: %v", err)
+	}
+
+	//  Returns: signing identity
+	adminIdentity, err := mspClient.GetSigningIdentity(info.OrgAdmin)
+	if err != nil {
+		return fmt.Errorf("获取指定id的签名标识失败: %v", err)
+	}
+
+	// SaveChannelRequest holds parameters for save channel request
+	channelReq := resmgmt.SaveChannelRequest{ChannelID:info.ChannelID, ChannelConfigPath:info.ChannelConfig, SigningIdentities:[]msp.SigningIdentity{adminIdentity}}
+	// save channel response with transaction ID
+	_, err = resMgmtClient.SaveChannel(channelReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts), resmgmt.WithOrdererEndpoint(info.OrdererOrgName))
+	if err != nil {
+		return fmt.Errorf("创建应用通道失败: %v", err)
+	}
+
+	fmt.Println("通道已成功创建，")
+</code></pre>
+<h1 id="18、peer节点加入通道">1.8、peer节点加入通道</h1>
+<pre><code class="language-go">// allows for peers to join existing channel with optional custom options (specific peers, filtered peers). If peer(s) are not specified in options it will default to all peers that belong to client's MSP.
+
+	err = info.OrgResMgmt.JoinChannel(
+        info.ChannelID, 
+        resmgmt.WithRetry(retry.DefaultResMgmtOpts), 
+        resmgmt.WithOrdererEndpoint(info.OrdererOrgName)
+    )
+	if err != nil {
+		return fmt.Errorf("Peers加入通道失败: %v", err)
+	}
+
+	fmt.Println("peers 已成功加入通道.")
+</code></pre>
+<h1 id="19、资源管理客户端安装链码">1.9、资源管理客户端安装链码</h1>
+<p>安装Fabric链码使用资源管理客户端的InstallCC接口，需要指定resmgmt.InstallCCRequest以及在哪些peers上面安装。resmgmt.InstallCCRequest指明了链码ID、链码路径、链码版本以及打包后的链码。</p>
+<p>打包链码需要使用到链码路径CCPath和GoPath，GoPath即本机的$GOPATH，CCPath是相对于GoPath的相对路径，如果路径设置不对，会造成sdk找不到链码。</p>
+<pre><code class="language-go">fmt.Println("开始安装链码......")
+	// creates new go lang chaincode package
+	ccPkg, err := gopackager.NewCCPackage(info.ChaincodePath, info.ChaincodeGoPath)
+	if err != nil {
+		return nil, fmt.Errorf("创建链码包失败: %v", err)
+	}
+
+	// contains install chaincode request parameters
+	installCCReq := resmgmt.InstallCCRequest{Name: info.ChaincodeID, Path: info.ChaincodePath, Version: ChaincodeVersion, Package: ccPkg}
+  /*可以制定安装在哪个peer节点上
+  reqPeers := resmgmt.WithTargetEndpoints("peer0.org1.example.com")
+  resps, err := rc.InstallCC(req, reqPeers)
+  */
+	// allows administrators to install chaincode onto the filesystem of a peer
+	_, err = info.OrgResMgmt.InstallCC(installCCReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
+	if err != nil {
+		return nil, fmt.Errorf("安装链码失败: %v", err)
+	}
+
+	fmt.Println("指定的链码安装成功")
+</code></pre>
+<h1 id="110、资源管理客户端实例化链码">1.10、资源管理客户端实例化链码</h1>
+<p>实例化链码需要使用fabric go sdk的资源管理客户端的InstantiateCC接口，需要通过ChannelID、 resmgmt.InstantiateCCRequest和peers，指明在哪个channel上实例化链码，请求包含了链码的ID、路径、版本，以及初始化参数和背书策略，背书策略可以通过cauthdsl.FromString生成。</p>
+<p>方法一：</p>
+<pre><code class="language-go">// endorser policy
+org1OrOrg2 := "OR('Org1MSP.member','Org2MSP.member')"
+ccPolicy, err := cauthdsl.FromString(org1OrOrg2)
+if err != nil {
+  return errors.WithMessage(err, "gen policy from string error")
+}
+
+// new request
+args := packArgs([]string{"init", "a", "100", "b", "200"})
+req := resmgmt.InstantiateCCRequest{
+  Name:    c.CCID,
+  Path:    c.CCPath,
+  Version: v,
+  Args:    args,
+  Policy:  ccPolicy,
+}
+
+// send request and handle response
+reqPeers := resmgmt.WithTargetEndpoints("peer0.org1.example.com")
+resp, err := rc.InstantiateCC(ChannelID, req, reqPeers)
+if err != nil {
+  return errors.WithMessage(err, "instantiate chaincode error")
+}
+
+</code></pre>
+<p>方法二：</p>
+<pre><code class="language-go">//  returns a policy that requires one valid
+	ccPolicy := policydsl.SignedByAnyMember([]string{"org1.kevin.kongyixueyuan.com"})
+
+	instantiateCCReq := resmgmt.InstantiateCCRequest{Name: info.ChaincodeID, Path: info.ChaincodePath, Version: ChaincodeVersion, Args: [][]byte{[]byte("init")}, Policy: ccPolicy}
+	// instantiates chaincode with optional custom options (specific peers, filtered peers, timeout). If peer(s) are not specified
+	_, err = info.OrgResMgmt.InstantiateCC(info.ChannelID, instantiateCCReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
+	if err != nil {
+		return nil, fmt.Errorf("实例化链码失败: %v", err)
+	}
+
+	fmt.Println("链码实例化成功")
+</code></pre>
+<h1 id="111、资源管理客户端升级链码">1.11、资源管理客户端升级链码</h1>
+<p>升级链码和实例化链码是非常相似的，不同点只在请求是resmgmt.UpgradeCCRequest，调用的接口是rc.UpgradeCC：</p>
+<pre><code class="language-go">// endorser policy
+org1AndOrg2 := "AND('Org1MSP.member','Org2MSP.member')"
+ccPolicy, err := c.genPolicy(org1AndOrg2)
+if err != nil {
+  return errors.WithMessage(err, "gen policy from string error")
+}
+
+// new request
+args := packArgs([]string{"init", "a", "100", "b", "200"})
+req := resmgmt.UpgradeCCRequest{
+  Name:    c.CCID,
+  Path:    c.CCPath,
+  Version: v,
+  Args:    args,
+  Policy:  ccPolicy,
+}
+
+// send request and handle response
+reqPeers := resmgmt.WithTargetEndpoints("peer0.org1.example.com")
+resp, err := rc.UpgradeCC(ChannelID, req, reqPeers)
+if err != nil {
+  return errors.WithMessage(err, "instantiate chaincode error")
+}
+
+</code></pre>
+<h1 id="112、通道客户端调用链码">1.12、通道客户端调用链码</h1>
+<p>使用通道客户端的Execute接口调用链码，使用入参channel.Request和peers指明要让哪些peer上执行链码，进行背书。channel.Request指明了要调用的链码，以及链码内要Invoke的函数args，args是序列化的结果，序列化是自定义的，只要链码能够按相同的规则进行反序列化即可。</p>
+<pre><code class="language-go">// new channel request for invoke
+args := packArgs([]string{"a", "b", "10"})
+req := channel.Request{
+  ChaincodeID: c.CCID,
+  Fcn:         "invoke",
+  Args:        args,
+}
+
+// send request and handle response
+// peers is needed
+reqPeers := channel.WithTargetEndpoints("peer0.org1.example.com")
+resp, err := cc.Execute(req, reqPeers)
+if err != nil {
+  return errors.WithMessage(err, "invoke chaincode error")
+}
+log.Printf("invoke chaincode tx: %s", resp.TransactionID)
+</code></pre>
+<h1 id="113、通道客户端查询链码">1.13、通道客户端查询链码</h1>
+<p>查询和调用链码是非常相似的，使用相同的channel.Request，指明了Invoke链码中的query函数，然后调用cc.Query进行查询操作，这样节点不会对请求进行背书：</p>
+<pre><code class="language-go">// new channel request for query
+req := channel.Request{
+  ChaincodeID: c.CCID,
+  Fcn:         "query",
+  Args:        packArgs([]string{keys}),
+}
+
+// send request and handle response
+reqPeers := channel.WithTargetEndpoints(peer)
+resp, err := cc.Query(req, reqPeers)
+if err != nil {
+  return errors.WithMessage(err, "query chaincode error")
+}
+
+log.Printf("query chaincode tx: %s", resp.TransactionID)
+log.Printf("result: %v", string(resp.Payload))
+</code></pre>
+<h1 id="114、综合示例">1.14、综合示例</h1>
+<p>（1）客户端实现</p>
+<pre><code class="language-go">/**
+  author: liuhui
+*/
+
+package sdkInit
+
+import (
+	"fmt"
+	"github.com/astaxie/beego/logs"
+	mspclient "github.com/hyperledger/fabric-sdk-go/pkg/client/msp"
+	"github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt"
+	"github.com/hyperledger/fabric-sdk-go/pkg/common/errors/retry"
+	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
+	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
+	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
+
+	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
+	"github.com/hyperledger/fabric-sdk-go/pkg/fab/ccpackager/gopackager"
+	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/policydsl"
+)
+
+const ChaincodeVersion = "1.0"
+
+//initialized fabric sdk
+func SetupSDK(ConfigFile string, initialized bool) (*fabsdk.FabricSDK, error) {
+
+	if initialized {
+		//logs.Error("Fabric SDK has been initialized")
+		return nil, fmt.Errorf("Fabric SDK has been initialized")
+	}
+
+	sdk, err := fabsdk.New(config.FromFile(ConfigFile))
+	if err != nil {
+		//logs.Error("Instantiation Fabric SDK failed")
+		return nil, fmt.Errorf("Instantiation Fabric SDK failed: %v", err)
+	}
+
+	logs.Informational("Fabric SDK is initialized successfully")
+	return sdk, nil
+}
+
+// create channel and join peers
+func CreateChannel(sdk *fabsdk.FabricSDK, info *InitInfo) error {
+
+	clientContext := sdk.Context(fabsdk.WithUser(info.OrgAdmin), fabsdk.WithOrg(info.OrgName))
+	if clientContext == nil {
+		return fmt.Errorf("Failed to create client context based on organization name and administrator user")
+	}
+	// New returns a resource management client instance.
+	resMgmtClient, err := resmgmt.New(clientContext)
+	if err != nil {
+		return fmt.Errorf("Failed to create resource management client by client context: %v", err)
+	}
+	// New creates a new Client instance
+	mspClient, err := mspclient.New(sdk.Context(), mspclient.WithOrg(info.OrgName))
+	if err != nil {
+		return fmt.Errorf("Failed to create Org MSP client by specified OrgName: %v", err)
+	}
+	//  Returns: signing identity
+	adminIdentity, err := mspClient.GetSigningIdentity(info.OrgAdmin)
+	if err != nil {
+		return fmt.Errorf("Failed to get the signature of the specified ID: %v", err)
+	}
+	// SaveChannelRequest holds parameters for save channel request
+	channelReq := resmgmt.SaveChannelRequest{ChannelID: info.ChannelID, ChannelConfigPath: info.ChannelConfig, SigningIdentities: []msp.SigningIdentity{adminIdentity}}
+	// save channel response with transaction ID
+	_, err = resMgmtClient.SaveChannel(channelReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts), resmgmt.WithOrdererEndpoint(info.OrdererOrgName))
+	if err != nil {
+		return fmt.Errorf("Failed to create channle: %v", err)
+	}
+	logs.Informational("Create channel successful")
+
+	info.OrgResMgmt = resMgmtClient
+
+	// allows for peers to join existing channel with optional custom options (specific peers, filtered peers). If peer(s) are not specified in options it will default to all peers that belong to client's MSP.
+	err = info.OrgResMgmt.JoinChannel(info.ChannelID, resmgmt.WithRetry(retry.DefaultResMgmtOpts), resmgmt.WithOrdererEndpoint(info.OrdererOrgName))
+	if err != nil {
+		return fmt.Errorf("Peers failed to join channel: %v", err)
+	}
+	logs.Informational("Peers join channel successful")
+	return nil
+}
+
+//install and instantiate chaincode
+func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Client, error) {
+	logs.Informational("Start to install chaincode")
+	// creates new go lang chaincode package
+	ccPkg, err := gopackager.NewCCPackage(info.ChaincodePath, info.ChaincodeGoPath)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to create chaincode package: %v", err)
+	}
+
+	// contains install chaincode request parameters
+	installCCReq := resmgmt.InstallCCRequest{Name: info.ChaincodeID, Path: info.ChaincodePath, Version: ChaincodeVersion, Package: ccPkg}
+	// allows administrators to install chaincode onto the filesystem of a peer
+	_, err = info.OrgResMgmt.InstallCC(installCCReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
+	if err != nil {
+		return nil, fmt.Errorf("Failed to install chaincode: %v", err)
+	}
+
+	logs.Informational("Install chaincode successful")
+	logs.Informational("Start to instantiate chaincode")
+
+	//  returns a policy that requires one valid
+	ccPolicy := policydsl.SignedByAnyMember([]string{"org1.institution.com"})
+
+	instantiateCCReq := resmgmt.InstantiateCCRequest{Name: info.ChaincodeID, Path: info.ChaincodePath, Version: ChaincodeVersion, Args: [][]byte{[]byte("init")}, Policy: ccPolicy}
+	// instantiates chaincode with optional custom options (specific peers, filtered peers, timeout). If peer(s) are not specified
+	_, err = info.OrgResMgmt.InstantiateCC(info.ChannelID, instantiateCCReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
+	if err != nil {
+		return nil, fmt.Errorf("Failed to instantiate chaincode: %v", err)
+	}
+
+	logs.Informational("Instantiate chaincode successful")
+
+	clientChannelContext := sdk.ChannelContext(info.ChannelID, fabsdk.WithUser(info.UserName), fabsdk.WithOrg(info.OrgName))
+	// returns a Client instance. Channel client can query chaincode, execute chaincode and register/unregister for chaincode events on specific channel.
+	channelClient, err := channel.New(clientChannelContext)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to create channel context: %v", err)
+	}
+
+	logs.Informational("Create channel client successful ,you can use it to execute transactions.")
+
+	return channelClient, nil
+}
+func ChannelClient(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Client,error){
+	clientChannelContext := sdk.ChannelContext(info.ChannelID, fabsdk.WithUser(info.UserName), fabsdk.WithOrg(info.OrgName))
+	// returns a Client instance. Channel client can query chaincode, execute chaincode and register/unregister for chaincode events on specific channel.
+	channelClient, err := channel.New(clientChannelContext)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to create channel context: %v", err)
+	}
+
+	logs.Informational("Create channel client successful ,you can use it to execute transactions.")
+
+	return channelClient, nil
+}
+</code></pre>
+<p>（2）调用客户端</p>
+<pre><code class="language-go">package main
+
+import (
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
+	_ "github.com/lib/pq"
+	"jingjinjiapi/controllers"
+	_ "jingjinjiapi/routers"
+	"jingjinjiapi/sdkInit"
+	"os"
+)
+
+const (
+	//config of SDK
+	configFile = "config.yaml"
+	//mark whehter the client is initialized
+	initialized = false
+	//the chaincode id
+	EduCC = "educc"
+
+	DOC_TYPE = "insObj"
+)
+
+func main() {
+
+	//setting loggers level and location
+	logs.SetLogger("file", `{"filename":"logs/jingjinji_beego.log"}`)
+	logs.SetLevel(logs.LevelInformational)
+	logs.Info("setting logs level : information")
+
+	//initialized the information of sdk
+	initInfo := &amp;sdkInit.InitInfo{
+
+		ChannelID:     "institutionchannel",
+		ChannelConfig: os.Getenv("GOPATH") + "/src/jingjinjiapi/fixtures/artifacts/channel.tx",
+
+		OrgAdmin:       "Admin",
+		OrgName:        "Org1",
+		OrdererOrgName: "orderer.institution.com",
+
+		ChaincodeID:     EduCC,
+		ChaincodeGoPath: os.Getenv("GOPATH"),
+		ChaincodePath:   "jingjinjiapi/chaincode/",
+		UserName:        "User1",
+	}
+	var serviceSetup controllers.ServiceSetup
+	//initialize SDK,use the function:fabsdk.new
+	sdk, err := sdkInit.SetupSDK(configFile, initialized)
+	if err != nil {
+		logs.Error(err.Error())
+		return
+	}
+	//free the resource until the main program finish
+	defer sdk.Close()
+	flag := false
+	if flag{
+		//create channel and add the peer node to the channel
+		err = sdkInit.CreateChannel(sdk, initInfo)
+		if err != nil {
+			logs.Error(err.Error())
+			return
+		}
+		//install chaincode and instantiate chaincode
+		channelClient, err := sdkInit.InstallAndInstantiateCC(sdk, initInfo)
+		if err != nil {
+			logs.Error(err.Error())
+			return
+		}
+		serviceSetup.ChaincodeID = EduCC
+		serviceSetup.Client = channelClient
+	}else{
+		channelClient, err := sdkInit.ChannelClient(sdk,initInfo)
+		if err != nil {
+			logs.Error(err.Error())
+			return
+		}
+		serviceSetup.ChaincodeID = EduCC
+		serviceSetup.Client = channelClient
+	}
+
+	logs.Informational(serviceSetup)
+
+	//===========================================//
+	//start Testing .............................................
+	//start service
+	
+	beego.Router("/v1/institution", &amp;controllers.InstitutionController{Setup: &amp;serviceSetup})
+
+}
+</code></pre>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-12-27 10:16</span>&nbsp;
+<a href="https://www.cnblogs.com/liuhui5599/">风云傲天</a>&nbsp;
+阅读(<span id="post_view_count">17</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14195513" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(14195513);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/10.3.1/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 314210, cb_blogApp = 'liuhui5599', cb_blogUserGuid = '0a4986ff-869d-e611-845c-ac853d9f53ac';
+    var cb_entryId = 14195513, cb_entryCreatedDate = '2020-12-27 10:16', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+       loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+   </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 风云傲天
+<br /><span id="poweredby">Powered by .NET 5.0.1-servicing.20575.16 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,520 @@
+1609049186114	geckodriver	INFO	Listening on 127.0.0.1:54995
+1609049187055	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileZMiZib"
+2020-12-27 14:06:30.034 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSButton: 0x12c81dc00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:06:30.034 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSButton: 0x13fa42400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:06:30.035 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSButton: 0x13fa47800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:06:30.037 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSButton: 0x13fa43c00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:06:30.038 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSButton: 0x13fa42c00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:06:30.038 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x13fa48000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:06:30.039 firefox-bin[3507:198724] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x13fa4b400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609049191067	Marionette	INFO	Listening on port 55006
+1609049191152	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  main/whats-new-panel Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609049305934	geckodriver	INFO	Listening on 127.0.0.1:55246
+1609049305942	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilewuTfHa"
+2020-12-27 14:08:27.438 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x135ad3800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:08:27.438 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14c911800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:08:27.439 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x122d05000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:08:27.440 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14c90b000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:08:27.440 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14c90c400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:08:27.441 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x14c90cc00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:08:27.441 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x14da9b800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609049308373	Marionette	INFO	Listening on port 55255
+1609049308400	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609049381157	geckodriver	INFO	Listening on 127.0.0.1:55357
+1609049381166	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofile6vqS0o"
+2020-12-27 14:09:42.651 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSButton: 0x12b40d400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:42.651 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSButton: 0x1434b9000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:42.652 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSButton: 0x111007800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:42.652 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSButton: 0x143912800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:42.653 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSButton: 0x14394c000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:42.654 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x14394a400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:42.654 firefox-bin[3568:201893] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x143959c00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609049383578	Marionette	INFO	Listening on port 55366
+1609049383622	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609049387266	Marionette	INFO	Stopped listening on port 55366
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+2020-12-27 14:09:51.187 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x133e71000>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:51.188 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14da9c400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:51.188 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14daa0400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:51.189 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14da9e800>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:51.189 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSButton: 0x14da9dc00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:51.190 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x14da9e400>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+2020-12-27 14:09:51.190 firefox-bin[3545:200400] Warning: Expected min height of view: (<NSPopoverTouchBarItemButton: 0x14ddb9c00>) to be less than or equal to 30 but got a height of 32.000000. This error will be logged once per view in violation.
+1609049397476	Marionette	INFO	Stopped listening on port 55006
+1609049400126	Marionette	INFO	Stopped listening on port 55255
+1609050264830	geckodriver	INFO	Listening on 127.0.0.1:55727
+1609050265841	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilejtj4Eo"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050268004	Marionette	INFO	Listening on port 55738
+1609050268094	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050271671	Marionette	INFO	Stopped listening on port 55738
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609050334042	geckodriver	INFO	Listening on 127.0.0.1:55822
+1609050335055	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofile9pWllG"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050336868	Marionette	INFO	Listening on port 55833
+1609050336891	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050339833	Marionette	INFO	Stopped listening on port 55833
+1609050381243	geckodriver	INFO	Listening on 127.0.0.1:55904
+1609050382258	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileenwr9b"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050384015	Marionette	INFO	Listening on port 55915
+1609050384103	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 697))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609050388945	Marionette	INFO	Stopped listening on port 55915
+1609050430082	geckodriver	INFO	Listening on 127.0.0.1:56004
+1609050431095	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofile2HEzMz"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050432910	Marionette	INFO	Listening on port 56015
+1609050432934	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050437629	Marionette	INFO	Stopped listening on port 56015
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609050685639	geckodriver	INFO	Listening on 127.0.0.1:56111
+1609050686651	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileob3ATy"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050688809	Marionette	INFO	Listening on port 56122
+1609050688893	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050692406	Marionette	INFO	Stopped listening on port 56122
+1609050735776	geckodriver	INFO	Listening on 127.0.0.1:56198
+1609050736774	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileRM0sa6"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050738533	Marionette	INFO	Listening on port 56209
+1609050738615	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050741391	Marionette	INFO	Stopped listening on port 56209
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609050826889	geckodriver	INFO	Listening on 127.0.0.1:56288
+1609050827902	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileebqNSh"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050829654	Marionette	INFO	Listening on port 56299
+1609050829738	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050832969	Marionette	INFO	Stopped listening on port 56299
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609050854979	geckodriver	INFO	Listening on 127.0.0.1:56370
+1609050855991	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilexCVa62"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050857775	Marionette	INFO	Listening on port 56381
+1609050857832	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050861526	Marionette	INFO	Stopped listening on port 56381
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609050903893	geckodriver	INFO	Listening on 127.0.0.1:56466
+1609050904904	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilebmDQ93"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050906683	Marionette	INFO	Listening on port 56477
+1609050906745	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609050909023	Marionette	INFO	Stopped listening on port 56477
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609050940688	geckodriver	INFO	Listening on 127.0.0.1:56552
+1609050941704	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileoa2DCL"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609050943459	Marionette	INFO	Listening on port 56563
+1609050943538	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1609050946349	Marionette	INFO	Stopped listening on port 56563
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609051027159	geckodriver	INFO	Listening on 127.0.0.1:56646
+1609051028175	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileH1RrB6"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609051029933	Marionette	INFO	Listening on port 56657
+1609051030010	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609051033342	Marionette	INFO	Stopped listening on port 56657
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609051096550	geckodriver	INFO	Listening on 127.0.0.1:56734
+1609051097561	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileJ8Auv5"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609051099317	Marionette	INFO	Listening on port 56745
+1609051099401	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1609051101182	Marionette	INFO	Stopped listening on port 56745
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609051123418	geckodriver	INFO	Listening on 127.0.0.1:56813
+1609051124434	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileEX2LTw"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609051126200	Marionette	INFO	Listening on port 56824
+1609051126272	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609051129658	Marionette	INFO	Stopped listening on port 56824
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609051202703	geckodriver	INFO	Listening on 127.0.0.1:56906
+1609051203717	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilea3Z1VQ"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609051205464	Marionette	INFO	Listening on port 56917
+1609051205542	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609051207835	Marionette	INFO	Stopped listening on port 56917
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609051456710	geckodriver	INFO	Listening on 127.0.0.1:57001
+1609051457721	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileVeFMM9"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609051459480	Marionette	INFO	Listening on port 57012
+1609051459561	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609051462534	Marionette	INFO	Stopped listening on port 57012
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609051791510	geckodriver	INFO	Listening on 127.0.0.1:57360
+1609051792524	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilepBq6pc"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609051794648	Marionette	INFO	Listening on port 57371
+1609051794672	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609051796964	Marionette	INFO	Stopped listening on port 57371
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609052086391	geckodriver	INFO	Listening on 127.0.0.1:57468
+1609052087402	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileSRMv7p"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609052089224	Marionette	INFO	Listening on port 57479
+1609052089237	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1609052092582	Marionette	INFO	Stopped listening on port 57479
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609052113994	geckodriver	INFO	Listening on 127.0.0.1:57559
+1609052115004	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileaJAe5T"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609052116801	Marionette	INFO	Listening on port 57570
+1609052116845	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609052120337	Marionette	INFO	Stopped listening on port 57570
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609052150883	geckodriver	INFO	Listening on 127.0.0.1:57663
+1609052151894	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilejjayxv"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609052153686	Marionette	INFO	Listening on port 57674
+1609052153730	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1609052156865	Marionette	INFO	Stopped listening on port 57674
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609052176342	geckodriver	INFO	Listening on 127.0.0.1:57748
+1609052177357	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilecg65jJ"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609052179151	Marionette	INFO	Listening on port 57759
+1609052179199	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1609052182160	Marionette	INFO	Stopped listening on port 57759
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609052229818	geckodriver	INFO	Listening on 127.0.0.1:57851
+1609052230831	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofile4hE2fO"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609052232642	Marionette	INFO	Listening on port 57862
+1609052232673	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609052234964	Marionette	INFO	Stopped listening on port 57862
+1609053074259	geckodriver	INFO	Listening on 127.0.0.1:57987
+1609053075269	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileOjHPQa"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053077086	Marionette	INFO	Listening on port 57998
+1609053077106	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053165484	geckodriver	INFO	Listening on 127.0.0.1:58047
+1609053166501	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileQSK4rz"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053168288	Marionette	INFO	Listening on port 58058
+1609053168351	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053171759	Marionette	INFO	Stopped listening on port 58058
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609053552062	geckodriver	INFO	Listening on 127.0.0.1:58158
+1609053553077	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileUltC6i"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053554984	Marionette	INFO	Listening on port 58169
+1609053555018	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053558873	Marionette	INFO	Stopped listening on port 58169
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609053817616	geckodriver	INFO	Listening on 127.0.0.1:58304
+1609053818617	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileXJJQJV"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053820457	Marionette	INFO	Listening on port 58315
+1609053820464	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053823387	Marionette	INFO	Stopped listening on port 58315
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609053823899	geckodriver	INFO	Listening on 127.0.0.1:58372
+1609053824912	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileQm5ln7"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053826717	Marionette	INFO	Listening on port 58383
+1609053826752	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053829073	Marionette	INFO	Stopped listening on port 58383
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609053829520	geckodriver	INFO	Listening on 127.0.0.1:58437
+1609053830532	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileyiFKpc"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053832302	Marionette	INFO	Listening on port 58448
+1609053832394	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053834826	Marionette	INFO	Stopped listening on port 58448
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609053835329	geckodriver	INFO	Listening on 127.0.0.1:58499
+1609053836341	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilewnbazy"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609053838131	Marionette	INFO	Listening on port 58510
+1609053838186	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609053841276	Marionette	INFO	Stopped listening on port 58510
+console.error: services.settings: 
+  main/cfr Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609054573933	geckodriver	INFO	Listening on 127.0.0.1:58626
+1609054574945	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilejU19qB"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609054576783	Marionette	INFO	Listening on port 58637
+1609054576788	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609054580515	Marionette	INFO	Stopped listening on port 58637
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609054680434	geckodriver	INFO	Listening on 127.0.0.1:58771
+1609054681441	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileIjI9IR"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609054683503	Marionette	INFO	Listening on port 58782
+1609054683588	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609054687375	Marionette	INFO	Stopped listening on port 58782
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1609054687879	geckodriver	INFO	Listening on 127.0.0.1:58881
+1609054688887	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileLgSjVR"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609054690859	Marionette	INFO	Listening on port 58900
+1609054690941	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609054695253	Marionette	INFO	Stopped listening on port 58900
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609054695813	geckodriver	INFO	Listening on 127.0.0.1:58996
+1609054696814	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilenFJJ9C"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609054698784	Marionette	INFO	Listening on port 59009
+1609054698881	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609054702530	Marionette	INFO	Stopped listening on port 59009
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609054703008	geckodriver	INFO	Listening on 127.0.0.1:59097
+1609054704013	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileqkpyNE"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609054705984	Marionette	INFO	Listening on port 59108
+1609054706064	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609054709945	Marionette	INFO	Stopped listening on port 59108
+1609055232234	geckodriver	INFO	Listening on 127.0.0.1:59359
+1609055233245	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileJZHEKg"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055235220	Marionette	INFO	Listening on port 59372
+1609055235284	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055237761	Marionette	INFO	Stopped listening on port 59372
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609055238428	geckodriver	INFO	Listening on 127.0.0.1:59414
+1609055239443	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileoEQ4h3"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055241232	Marionette	INFO	Listening on port 59425
+1609055241286	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055243722	Marionette	INFO	Stopped listening on port 59425
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609055244271	geckodriver	INFO	Listening on 127.0.0.1:59474
+1609055245282	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileSt8KXQ"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055247046	Marionette	INFO	Listening on port 59485
+1609055247135	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055248827	Marionette	INFO	Stopped listening on port 59485
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609055249514	geckodriver	INFO	Listening on 127.0.0.1:59531
+1609055250528	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofilektpK2e"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055252572	Marionette	INFO	Listening on port 59542
+1609055252668	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055253925	Marionette	INFO	Stopped listening on port 59542
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609055634159	geckodriver	INFO	Listening on 127.0.0.1:59675
+1609055635168	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileRp5OLs"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055637036	Marionette	INFO	Listening on port 59686
+1609055637108	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055638445	Marionette	INFO	Stopped listening on port 59686
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609055639067	geckodriver	INFO	Listening on 127.0.0.1:59731
+1609055640076	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofile66x8db"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055641901	Marionette	INFO	Listening on port 59742
+1609055641911	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055643679	Marionette	INFO	Stopped listening on port 59742
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1609055644349	geckodriver	INFO	Listening on 127.0.0.1:59783
+1609055645356	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileJ7kVCL"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055647191	Marionette	INFO	Listening on port 59794
+1609055647289	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055648327	Marionette	INFO	Stopped listening on port 59794
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+1609055648961	geckodriver	INFO	Listening on 127.0.0.1:59837
+1609055649971	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/var/folders/s1/q34h2l350nqd8dg1vyhh1dfr0000gn/T/rust_mozprofileuxPyrg"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609055651954	Marionette	INFO	Listening on port 59848
+1609055652015	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609055652921	Marionette	INFO	Stopped listening on port 59848
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))

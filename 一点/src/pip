@@ -1,6 +1,11 @@
-Package     Version Latest Type
------------ ------- ------ -----
-distro-info 0.0.0   0.10   sdist
-pycairo     1.16.2  1.20.0 sdist
-pycups      1.9.73  2.0.1  sdist
-PyGObject   3.36.0  3.38.0 sdist
+1.第一遍爬取
+    先查看url是在数据库内
+        如果在，则不爬取
+        否则，爬取，并存入数据库
+
+2.检查new_page_list
+    如果为空，说明网站已爬完
+        读取数据库中state=2的url，并添加到new_page_list
+
+3.查看反爬间隔时间，
+
